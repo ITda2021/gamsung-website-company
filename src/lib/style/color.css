@@ -1,11 +1,11 @@
 :root {
-    --gray100: #F7F8F9;
-    --gray200: #E9EBED;
-    --gray300: #CACDD2;
-    --gray400: #9FA4A9;
-    --gray500: #73787E;
-    --gray600: #464C52;
-    --gray700: #26282B;
-    --gray800: #1B1D1F;
-    --gray900: #15171A;
+  --gray100: #f7f8f9;
+  --gray200: #e9ebed;
+  --gray300: #cacdd2;
+  --gray400: #9fa4a9;
+  --gray500: #73787e;
+  --gray600: #464c52;
+  --gray700: #26282b;
+  --gray800: #1b1d1f;
+  --gray900: #15171a;
 }

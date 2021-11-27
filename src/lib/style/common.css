@@ -1,0 +1,35 @@
+.main-container {
+  width: 1280px;
+}
+
+/*타이포*/
+
+.basic-h1 {
+  font-size: 5.4rem;
+  font-weight: bold;
+  line-height: 126.8%;
+}
+
+.basic-h3 {
+  font-size: 3.6rem;
+  font-weight: bold;
+  line-height: 135%;
+}
+
+.basic-h4 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 146.3%;
+}
+
+.basic-h5 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 161.8%;
+}
+
+.basic-p {
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 195%;
+}
