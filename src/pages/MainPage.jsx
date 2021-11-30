@@ -1,12 +1,22 @@
-import React, { Fragment } from "react";
+import React from "react";
 import TheHeader from "components/TheHeader";
+import MainContainer from "components/common/MainContainer";
+
+import Heading1 from "components/common/Heading1.js";
 
 function MainPage() {
   return (
-    <Fragment>
+    <main>
       <TheHeader />
-      <div>메인 페이지</div>
-    </Fragment>
+      <MainContainer>
+        <div claaName="intro">
+          <Heading1>감성소프트 소개문구</Heading1>
+        </div>
+        <section className="shortcut">
+          <div className="Companyshort"></div>
+        </section>
+      </MainContainer>
+    </main>
   );
 }
 

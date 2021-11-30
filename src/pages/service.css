@@ -1,0 +1,52 @@
+section {
+  padding: 7rem 0;
+}
+section:first-child {
+  margin-top: 8rem;
+}
+section.service {
+  display: flex;
+}
+.servicetop {
+  margin-right: 12%;
+}
+
+section:nth-child(2) {
+  margin-top: 0rem;
+}
+section.service1 {
+  display: flex;
+}
+.servicename {
+  padding-top: 5rem;
+  margin-right: 12%;
+}
+.int {
+  margin-bottom: 1.5rem;
+}
+.paragraph {
+  margin-bottom: 2rem;
+}
+
+section:nth-child(2) img {
+  padding-left: 1.5rem;
+}
+@media (max-width: 768px) {
+  section {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding: 5rem 0;
+  }
+  section:nth-child(2) {
+    flex-direction: column;
+  }
+
+  .servicename {
+    margin-right: auto;
+  }
+
+  .app {
+    width: 100%;
+    height: 54%;
+  }
+}
