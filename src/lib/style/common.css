@@ -4,32 +4,49 @@
 
 /*타이포*/
 
-.basic-h1 {
+.basic_h1 {
   font-size: 5.4rem;
   font-weight: bold;
   line-height: 126.8%;
 }
 
-.basic-h3 {
+.basic_h3 {
   font-size: 3.6rem;
   font-weight: bold;
   line-height: 135%;
 }
 
-.basic-h4 {
+.basic_h4 {
   font-size: 2.8rem;
   font-weight: bold;
   line-height: 146.3%;
 }
 
-.basic-h5 {
+.basic_h5 {
   font-size: 2.2rem;
   font-weight: bold;
   line-height: 161.8%;
 }
 
-.basic-p {
+.basic_p {
   font-size: 1.8rem;
   font-weight: normal;
   line-height: 195%;
+}
+
+.caption_en {
+  /* caption-en */
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  letter-spacing: 0.355em;
+
+  /* Gray300 */
+
+  color: #cacdd2;
 }
