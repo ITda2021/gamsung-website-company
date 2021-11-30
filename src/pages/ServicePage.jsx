@@ -6,7 +6,8 @@ import font from ".style/common.css";
 
 function AboutPage() {
   return (
-    <Fragment classname={styles.body}>
+    
+    {/* <Fragment classname={styles.body}>
       <TheHeader classname={styles.header} />
       <div classname={styles.title}>
         <caption classnname={font.caption_en}>SERVICES</caption>
@@ -32,5 +33,5 @@ function AboutPage() {
     </Fragment>
   );
 }
-
+ */}
 export default AboutPage;
