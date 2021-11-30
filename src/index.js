@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./index.css";
 import "./lib/style/reset.css";
-import "./lib/style/color.css";
 import "./lib/style/common.css";
+import "./index.css";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
