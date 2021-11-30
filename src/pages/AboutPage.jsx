@@ -1,13 +1,13 @@
 import React from "react";
 import TheHeader from "components/TheHeader";
 //import styled from "styled-components";
-//import palette from "lib/style/palette.js";
+import palette from "lib/style/palette.js";
 
-import MainContainer from "components/about/MainContainer.js";
-import Caption from "components/about/Caption.js";
-import Heading3 from "components/about/Heading3.js";
-import Paragraph from "components/about/Paragraph.js";
-import Table from "components/about/Table.js";
+import MainContainer from "components/common/MainContainer.js";
+import Caption from "components/common/Caption.js";
+import Heading3 from "components/common/Heading3.js";
+import Paragraph from "components/common/Paragraph.js";
+import Table from "components/common/Table.js";
 
 import "./AboutPage.css";
 
@@ -53,11 +53,11 @@ function AboutPage() {
       </MainContainer>
       <section className="ceo">
         <MainContainer>
-          <Caption>CEO</Caption>
-          <Heading3>
+          <Caption color={palette.gray[5]}>CEO</Caption>
+          <Heading3 color={palette.gray[1]}>
             당신도 우리 기술과 함께라면 영상 전문가가 될 수 있습니다
           </Heading3>
-          <Paragraph>
+          <Paragraph color={palette.gray[4]}>
             당사는 영상 편집 플랫폼을 개발하고 있는 기술개발 회사로서, 2020년
             2월 ~~기법을 필두로 ~개의 모션 관련 특허를 출원하였습니다. 키네틱
             타이포그래피 기법은 기존 영상편집 시장의 전반적인 영상 퀄리티를
