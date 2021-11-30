@@ -6,6 +6,10 @@ const StyledCaption = styled.div`
   font-size: 18px;
   line-height: 195%;
   color: ${(props) => props.color || palette.gray[6]};
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    line-height: 200%;
+  }
 `;
 
 function Caption({ children, ...rest }) {
