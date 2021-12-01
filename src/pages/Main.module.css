@@ -1,0 +1,54 @@
+main.mains {
+  background: url("img/mainpage.png");
+  background-size: cover;
+}
+section {
+  padding-top: 23rem;
+}
+section.intro {
+  padding-top: 10rem;
+}
+section.pyo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 24%;
+}
+
+table.ctable {
+  border-collapse: separate;
+  margin-top: 10rem;
+  margin-right: 3%;
+  border-spacing: 3rem 1.2rem;
+
+  border-top: 0.2rem solid #ffff;
+  padding: 0.7rem;
+}
+
+tbody.ctbody {
+  font-size: 1.6rem;
+  line-height: 160%;
+  color: #ffff;
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    line-height: 160%;
+  }
+}
+
+table.stable {
+  margin-top: 10rem;
+  margin-right: 3%;
+
+  border-collapse: separate;
+  border-spacing: 3rem 1.2rem;
+  border-top: 0.2rem solid #ffff;
+  padding: 0.7rem;
+}
+table.ntable {
+  margin-top: 10rem;
+  margin-right: 3%;
+  border-collapse: separate;
+  border-spacing: 3rem 1.2rem;
+  border-top: 0.2rem solid #ffff;
+  padding: 0.7rem;
+}
