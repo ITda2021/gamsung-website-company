@@ -12,26 +12,26 @@ import Paragraph from "components/common/Paragraph.js";
 import Modit from "img/service.png";
 import playstore from "img/playstore.png";
 import appstore from "img/appstore.png";
-import "./service.css";
+import styles from "./service.module.css";
 
 function ServicePage() {
   return (
     <main>
       <TheHeader />
       <MainContainer>
-        <section className="service">
-          <div className="servicetop">
+        <section className={styles.service}>
+          <div className={styles.servicetop}>
             <Caption>SERVICES</Caption>
             <Heading1> 대표 서비스를 소개합니다</Heading1>
           </div>
         </section>
-        <section className="service1">
-          <div className="servicename">
-            <div className="int">
+        <section className={styles.service1}>
+          <div className={styles.servicename}>
+            <div className={styles.int}>
               <Heading3 color={palette.blue[0]}>(주)감성소프트 "모딧"</Heading3>
               <Heading3>국내 최대 자막 템플릿 제공 영상편집기</Heading3>
             </div>
-            <div className="paragraph">
+            <div className={styles.paragraph}>
               <Paragraph>
                 (주)감성소프트는 사용자의 파격적인 편리성을 추구하는 지상파
                 방송국 수준의 자막 템플릿을 중심으로 한 모바일 영상 편집기를
@@ -46,7 +46,7 @@ function ServicePage() {
             <img src={appstore} alt="앱스토어" />
           </div>
 
-          <img className="app" src={Modit} alt="모딧 이미지" />
+          <img className={styles.modit} src={Modit} alt="모딧 이미지" />
         </section>
       </MainContainer>
     </main>
