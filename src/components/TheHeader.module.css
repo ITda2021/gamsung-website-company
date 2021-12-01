@@ -1,0 +1,156 @@
+header {
+  width: 100%;
+  padding-top: 2.5rem;
+  height: 8rem;
+  position: fixed;
+  top:0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.headerContainer {
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logoImg {
+  width: 14.1rem;
+}
+
+.navContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinkListContainer {
+  display: flex;
+  gap: 8.3rem;
+}
+
+.navLinkList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.navLink {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #9FA4A9;
+  text-align: center;
+}
+
+.navLinkTitle {
+  padding: .8rem 2rem;
+  border-radius: 10rem;
+  margin-bottom: 3.4rem;
+}
+
+.navLinkContainer a{
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #464C52;
+  text-decoration: none;
+}
+
+.languageIcon {
+  margin: .5rem 0 0 6%;
+  width: 2rem;
+}
+
+.menuBtn {
+  position: absolute;
+  right: 0;
+  width: 1.8rem;
+  height: 1.4rem;
+  display: none;
+}
+
+.menuBtn div {
+  width: 100%;
+  height: 2px;
+  background-color: #15171A;
+}
+
+.navLinkTitle:hover {
+  animation: changeBG 300ms forwards;
+  -moz-animation: changeBG 300ms forwards; /* Firefox */
+  -webkit-animation: changeBG 300ms forwards; /* Safari and Chrome */
+  -o-animation: changeBG 300ms forwards; /* Opera */
+}
+
+
+@media (max-width: 768px) {
+  header {
+    height: 7rem;
+  }
+
+  .logoImg {
+    width: 8.7rem;
+  }
+
+  .navContainer {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+
+  .languageIcon {
+    display: none;
+  }
+}
+
+@keyframes changeBG {
+  from {
+      background-color: none;
+  }
+  to {
+      background-color: #15171A;
+      color: #F7F8F9;
+  }
+}
+@-moz-keyframes changeBG { /* Firefox */
+  from {
+      background-color: none;
+  }
+  to {
+      background-color: #15171A;
+      color: #F7F8F9;
+  }
+}
+@-webkit-keyframes changeBG { /* Safari and Chrome */
+  from {
+      background-color: none;
+  }
+  to {
+      background-color: #15171A;
+      color: #F7F8F9;
+  }
+}
+@-o-keyframes changeBG { /* Opera */
+  from {
+      background-color: none;
+  }
+  to {
+      background-color: #15171A;
+      color: #F7F8F9;
+  }
+}
