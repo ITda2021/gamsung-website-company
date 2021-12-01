@@ -4,7 +4,7 @@ import MainContainer from "components/common/MainContainer.js";
 import Caption from "components/common/Caption.js";
 import Heading3 from "components/common/Heading3.js";
 import Paragraph from "components/common/Paragraph.js";
-import Table from "components/company/Table.js";
+import Table from "components/company/AboutTable.js";
 
 import styles from "pages/AboutPage.module.css";
 

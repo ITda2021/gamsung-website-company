@@ -3,9 +3,7 @@ import styled from "styled-components";
 import palette from "lib/style/palette";
 
 const StyledTable = styled.div`
-  width: 100%;
   padding: 1.6rem 0;
-  border-top: 2px solid ${palette.gray[6]};
   @media (max-width: 768px) {
     padding: 1.1rem 0;
   }
@@ -22,19 +20,19 @@ const TBody = styled.div`
 
 const TR = styled.div`
   display: flex;
-  gap: 10%;
+  align-items: center;
+  gap: 4%;
 `;
 
 const TH = styled.div`
-  width: 15%;
-  font-weight: 500;
+  font-family: Montserrat;
+  font-weight: 600;
   font-size: 1.6rem;
   line-height: 160%;
   text-align: right;
   color: ${palette.gray[7]};
   @media (max-width: 768px) {
-    font-size: 1.3rem;
-    line-height: 160%;
+    font-size: 1.2rem;
   }
 `;
 
@@ -44,7 +42,6 @@ const TD = styled.div`
   color: ${palette.gray[5]};
   @media (max-width: 768px) {
     font-size: 1.3rem;
-    line-height: 160%;
   }
 `;
 
