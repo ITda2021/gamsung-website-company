@@ -1,6 +1,19 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import palette from "lib/style/palette";
+
+const centerStyle = css`
+  ${(props) =>
+    props.center &&
+    css`
+      width: 100%;
+      text-align: center;
+      @media (max-width: 768px) {
+        width: auto;
+        text-align: left;
+      }
+    `}
+`;
 
 const StyledCaption = styled.div`
   font-family: Montserrat;
@@ -8,6 +21,7 @@ const StyledCaption = styled.div`
   font-size: 1.6rem;
   letter-spacing: 0.355em;
   color: ${(props) => props.color || palette.gray[3]};
+  ${centerStyle}
   @media (max-width: 768px) {
     font-size: 1.2rem;
     line-height: 125%;
