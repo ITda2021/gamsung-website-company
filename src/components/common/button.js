@@ -6,7 +6,6 @@ function Button({ disabled, children }) {
   return <StyledButton disabled={disabled}>{children}</StyledButton>;
 }
 const StyledButton = styled.button`
-  margin-bottom: 2rem;
   border: 1.5px solid #000000;
   cursor: pointer;
   font-family: Noto Sans KR;
