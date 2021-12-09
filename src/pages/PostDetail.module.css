@@ -11,11 +11,10 @@
 
 @media (max-width: 768px) {
   .postdetailsection {
-    padding: 5rem 0;
+    padding: 10rem 0;
   }
 }
 
 .postdetailsection {
-  padding: 15rem 0;
+  padding: 26rem 0 18rem;
 }
-

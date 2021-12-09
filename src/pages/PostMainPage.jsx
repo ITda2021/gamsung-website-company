@@ -22,7 +22,7 @@ function PostMainPage() {
       <MainContainer>
         <section className={styles.noticesection1}>
           <Caption>NOTICE</Caption>
-          <Heading1>
+          <Heading1 className={styles.noticeheader}>
             새소식을 <br /> 확인하세요
           </Heading1>
         </section>
