@@ -8,3 +8,13 @@
   margin: auto;
   display: block;
 }
+
+@media (max-width: 768px) {
+  .postdetailsection {
+    padding: 5rem 0;
+  }
+}
+
+.postdetailsection {
+  padding: 15rem 0;
+}
