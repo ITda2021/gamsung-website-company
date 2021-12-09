@@ -1,0 +1,142 @@
+footer {
+  background-color: #F7F8F9;
+  padding: 6.5rem 0 4.5rem 0;
+  border-top: 2px solid #E9EBED;
+}
+
+.footerTopContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7.4rem;
+}
+
+.logoImg {
+  width: 18rem;
+}
+
+.navLinkListContainer {
+  display: flex;
+  gap: 8.3rem;
+  text-align: center;
+  font-family: Montserrat;
+  margin-right: 17%;
+}
+
+.navLinkList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.navLinkTitle {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #464C52;
+  margin-bottom: 2rem;
+}
+
+.navLink {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #9FA4A9;
+}
+
+.etcLinkAndSNSContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.etcNavLinkList {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.etcNavLink {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #9FA4A9;
+}
+
+.snsIconsContainer {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.snsIconsContainer img {
+  width: 1.7rem;
+}
+
+.copyright {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.25%;
+  color: #CACDD2;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 3.1rem 0 5.1rem 0;
+  }
+  
+  .footerTopContainer {
+    flex-direction: column;
+    justify-content:flex-start;
+    margin-bottom: 2.1rem;
+  }
+  
+  .logoImg {
+    width: 10.1rem;
+    margin-bottom: 2.4rem;
+  }
+  
+  .navLinkListContainer {
+    flex-direction: column;
+    gap: 1.8rem;
+    text-align: left;
+    margin-right: auto;
+  }
+  
+  .navLinkList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+  
+  .navLinkTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.1rem;
+  }
+  
+  .navLink {
+    font-size: 1.1rem;
+  }
+  
+  .etcLinkAndSNSContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
+    margin-bottom: 2.8rem;
+  }
+  
+  .etcNavLinkList {
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .etcNavLink {
+    font-size: 1.1rem;
+  }
+  
+  .snsIconsContainer {
+    display: flex;
+    gap: .9rem;
+  }
+  
+  .copyright {
+    font-size: 1.1rem;
+  }
+}

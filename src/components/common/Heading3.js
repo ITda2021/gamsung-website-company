@@ -1,12 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import palette from "lib/style/palette";
+
+const centerStyle = css`
+  ${(props) =>
+    props.center &&
+    css`
+      width: 100%;
+      text-align: center;
+      @media (max-width: 768px) {
+        width: auto;
+        text-align: left;
+      }
+    `}
+`;
 
 const StyledHeading3 = styled.h3`
   font-weight: bold;
   font-size: 3.6rem;
   line-height: 150%;
   color: ${(props) => props.color || palette.gray[9]};
+  ${centerStyle}
   @media (max-width: 768px) {
     font-size: 2.6rem;
     line-height: 145%;

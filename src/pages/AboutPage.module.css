@@ -1,0 +1,307 @@
+.about,
+.ceo,
+.history,
+.cooperation,
+.conactus {
+  padding: 15rem 0;
+}
+
+/*about*/
+.about {
+  margin-top: 11rem;
+}
+
+.aboutContainer {
+  display: flex;
+}
+
+.aboutContents {
+  margin-right: 11%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aboutTitle {
+  margin-bottom: 2rem;
+}
+
+.aboutParagraph {
+  margin-bottom: 6rem;
+}
+
+.about img {
+  width: 40%;
+  height: 64.3rem;
+  object-fit: cover;
+}
+
+/*CEO*/
+.ceo {
+  position: relative;
+  width: 100%;
+  padding: 8rem 0 6rem 0;
+}
+
+.ceoBackgroundImg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ceoCaption {
+  margin-bottom: 6rem;
+}
+
+.ceoTitle {
+  margin-bottom: 2rem;
+}
+
+.ceoParagraph {
+  margin-bottom: 3.6rem;
+  max-width: 95rem;
+}
+
+.ceoWriter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ceoWriterDeco {
+  width: 9.7rem;
+  height: 2px;
+  background-color: #73787e;
+}
+
+.ceoWriterName {
+  text-align: right;
+  font-size: 1.6rem;
+  color: #cacdd2;
+  padding-top: 1.5rem;
+}
+
+/*cooperation*/
+.cooperation {
+  background-color: #f7f8f9;
+  width: 100%;
+}
+
+.cooperationCaption {
+  margin-bottom: 1.8rem;
+}
+
+.cooperationTitle {
+  margin-bottom: 12.7rem;
+}
+
+.cooperationList {
+  padding: 0 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.cooperationImg {
+  width: 14.2rem;
+  margin: 2.2rem 2.5rem;
+}
+
+/*찾아오시는 길*/
+.conactus {
+  margin-bottom: 3rem;
+}
+
+.conactusCaption {
+  margin-bottom: 1.8rem;
+}
+
+.conactusTitle {
+  margin-bottom: 6rem;
+}
+
+.contactListContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 6.5rem;
+}
+
+.contactItemTitle {
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: #15171a;
+  margin-right: 20%;
+}
+
+.contactItems {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+.contactItems > div {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+}
+
+.contactItem img {
+  width: 1.8rem;
+  margin-right: 1.6rem;
+}
+
+.contactItemText {
+  color: #464c52;
+  font-size: 1.6rem;
+  line-height: 160%;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+
+  /*about*/
+  .about {
+    margin-top: 6.4rem;
+  }
+
+  .aboutContainer {
+    flex-direction: column;
+  }
+
+  .aboutContents {
+    margin-right: auto;
+    justify-content: auto;
+  }
+
+  .aboutCaption {
+    margin-bottom: 0.9rem;
+  }
+
+  .aboutTitle {
+    margin-bottom: 0.8rem;
+  }
+
+  .aboutParagraph {
+    margin-bottom: 3rem;
+  }
+
+  .aboutTable {
+    margin-bottom: 2.9rem;
+  }
+
+  .about img {
+    width: 100%;
+    height: 22rem;
+  }
+
+  /*CEO*/
+  .ceo {
+    padding: 5rem 0;
+  }
+
+  .ceoCaption {
+    margin-bottom: 0.9rem;
+  }
+
+  .ceoTitle {
+    max-width: 32rem;
+    margin-bottom: 2rem;
+  }
+
+  .ceoParagraph {
+    margin-bottom: 3rem;
+    max-width: auto;
+  }
+
+  .ceoWriter {
+    align-items: flex-start;
+  }
+
+  .ceoWriterDeco {
+    width: 7.5rem;
+  }
+
+  .ceoWriterName {
+    font-size: 1.4rem;
+    padding-top: 1.2rem;
+  }
+
+  /*cooperation*/
+  .cooperationCaption {
+    margin-bottom: 0.9rem;
+  }
+
+  .cooperationTitle {
+    margin-bottom: 4.5rem;
+  }
+
+  .cooperationList {
+    padding: 0 25%;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .cooperationImg {
+    width: 9.1rem;
+    margin: 1.4rem 1.7rem;
+  }
+
+  /*찾아오시는 길*/
+  .conactus {
+    margin-bottom: 5rem;
+  }
+
+  .conactusCaption {
+    margin-bottom: 0.9rem;
+  }
+
+  .conactusTitle {
+    margin-bottom: 3rem;
+  }
+
+  .contactListContainer {
+    margin-top: 2.2rem;
+    flex-direction: column;
+  }
+
+  .contactItemTitle {
+    font-size: 1.8rem;
+    margin: 0 0 2rem 0;
+  }
+
+  .contactItems {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  .contactItems > div {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .contactItem img {
+    width: 1.5rem;
+    margin-right: 0.8rem;
+  }
+
+  .contactItemText {
+    font-size: 1.3rem;
+  }
+}
