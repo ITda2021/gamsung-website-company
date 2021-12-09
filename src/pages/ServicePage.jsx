@@ -12,7 +12,7 @@ import Paragraph from "components/common/Paragraph.js";
 import Modit from "img/service.png";
 import playstore from "img/playstore.png";
 import appstore from "img/appstore.png";
-import styles from "./service.module.css";
+import styles from "./Service.module.css";
 
 function ServicePage() {
   return (
@@ -20,10 +20,8 @@ function ServicePage() {
       <TheHeader />
       <MainContainer>
         <section className={styles.service}>
-          <div className={styles.servicetop}>
-            <Caption>SERVICES</Caption>
-            <Heading1> 대표 서비스를 소개합니다</Heading1>
-          </div>
+          <Caption>SERVICES</Caption>
+          <Heading1> 대표 서비스를 소개합니다</Heading1>
         </section>
         <section className={styles.service1}>
           <div className={styles.servicename}>
@@ -41,9 +39,14 @@ function ServicePage() {
                 위해 혁신을 이어가고있습니다.
               </Paragraph>
             </div>
+
             <Button>사이트 바로가기</Button>
-            <img src={playstore} alt="플레이스토어" />
-            <img src={appstore} alt="앱스토어" />
+            <img
+              className={styles.playstore}
+              src={playstore}
+              alt="플레이스토어"
+            />
+            <img className={styles.appstore} src={appstore} alt="앱스토어" />
           </div>
 
           <img className={styles.modit} src={Modit} alt="모딧 이미지" />
