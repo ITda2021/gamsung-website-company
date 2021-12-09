@@ -4,10 +4,14 @@ import styled from "styled-components";
 const StyledCaption = styled.div`
   font-size: 1.6rem;
   line-height: 195%;
-  color: ${(props) => props.color || palette.gray[6]};
+  color: ${(props) => props.color || palette.gray[1]};
   @media (max-width: 768px) {
     font-size: 1.4rem;
     line-height: 200%;
+  }
+  &:hover,
+  &:focus {
+    color: ${(props) => props.color || palette.gray[4]};
   }
 `;
 
