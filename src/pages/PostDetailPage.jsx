@@ -7,6 +7,7 @@ import styles from "./PostDetail.module.css";
 import NoticeDetailTable from "components/notice/NoticeDetailTable";
 import NoticeDetailContent from "components/notice/NoticeDetailContent";
 import NoticeDetailButton from "components/notice/NoticeDetailButton";
+import TheFooter from "components/TheFooter";
 
 //공지사항 세부페이지
 function PostPage() {
@@ -14,7 +15,7 @@ function PostPage() {
     <main>
       <TheHeader />
       <MainContainer>
-        <section>
+        <section className={styles.postdetailsection}>
           <NoticeDetailTable>
             <div className={styles.postdetailheader}>
               <NoticeDetailDate>2021.11.10</NoticeDetailDate>
@@ -47,6 +48,7 @@ function PostPage() {
           </div>
         </section>
       </MainContainer>
+      <TheFooter />
     </main>
   );
 }

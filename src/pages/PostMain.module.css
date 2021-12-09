@@ -7,3 +7,22 @@
   margin-top: 5.9rem;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .noticesection1,
+  .noticesection2,
+  .noticesection3 {
+    padding: 5rem 0;
+  }
+}
+
+.noticesection1,
+.noticesection3 {
+  padding: 15rem 0;
+}
+
+.noticesection2 {
+  margin-top: 0rem;
+  padding-top: 0rem;
+}
+
