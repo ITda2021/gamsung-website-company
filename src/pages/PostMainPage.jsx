@@ -12,6 +12,7 @@ import NoticeDate from "components/notice/NoticeDate";
 import NoticePage from "components/notice/NoticePageCount";
 import before_btn from "img/notice_before_btn.png";
 import after_btn from "img/notice_after_btn.png";
+import TheFooter from "components/TheFooter";
 
 //공지사항 페이지 main
 function PostMainPage() {
@@ -19,13 +20,13 @@ function PostMainPage() {
     <main>
       <TheHeader />
       <MainContainer>
-        <section>
+        <section className={styles.noticesection1}>
           <Caption>NOTICE</Caption>
           <Heading1>
             새소식을 <br /> 확인하세요
           </Heading1>
         </section>
-        <section>
+        <section className={styles.noticesection2}>
           <NoticeNavStyle>
             <NoticeLi>언론 보도 내용</NoticeLi>
             <NoticeLi>채용정보</NoticeLi>
@@ -34,7 +35,7 @@ function PostMainPage() {
             <NoticeLi>특허사항</NoticeLi>
           </NoticeNavStyle>
         </section>
-        <section className={styles.notice}>
+        <section className={styles.noticesection3}>
           <NoticeTable>
             <div className={styles.tabletop}>
               <NoticeTitle>제목</NoticeTitle>
@@ -71,6 +72,7 @@ function PostMainPage() {
           </div>
         </section>
       </MainContainer>
+      <TheFooter />
     </main>
   );
 }
