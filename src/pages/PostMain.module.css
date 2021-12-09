@@ -1,0 +1,14 @@
+section:nth-child(3) {
+  margin-top: 0rem;
+  padding-top: 0rem;
+}
+
+.tabletop {
+  border-bottom: 1px solid #e9ebed;
+  font-weight: bold;
+}
+
+.noticepagebar {
+  margin-top: 5.9rem;
+  text-align: center;
+}
