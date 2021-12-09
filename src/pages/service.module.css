@@ -1,55 +1,57 @@
-main {
-  background-image: none;
-}
-section {
-  padding: 7rem 0;
-}
-section:first-child {
-  margin-top: 8rem;
-}
-section.service {
+.service {
   display: flex;
-}
-.servicetop {
-  margin-right: 12%;
+  flex-direction: column;
+  padding-bottom: 4rem;
+  margin-left: 1rem;
 }
 
-section:nth-child(2) {
-  margin-top: 0rem;
-}
-section.service1 {
+.service1 {
   display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
 }
 .servicename {
   padding-top: 5rem;
-  margin-right: 12%;
 }
 .int {
   margin-bottom: 1.5rem;
 }
 .paragraph {
   margin-bottom: 2rem;
+  margin-right: 15rem;
+}
+.modit {
+  width: 40rem;
+  height: 55rem;
+  object-fit: contain;
 }
 
-section:nth-child(2) img {
-  padding-left: 1.5rem;
+.playstore {
+  padding-top: 1.2rem;
+  margin-left: 4rem;
 }
-@media (max-width: 768px) {
-  section {
-    padding-left: 1%;
-    padding-right: 1%;
-    padding: 5rem 0;
+.appstore {
+  padding-top: 1.2rem;
+  margin-left: 2rem;
+}
+
+@media (max-width: 960px) {
+  .service {
+    display: flex;
+
+    padding-top: 10rem;
+    padding-bottom: 4rem;
   }
-  section:nth-child(2) {
+
+  .service1 {
+    display: flex;
     flex-direction: column;
+    margin-left: 1rem;
   }
+  .modit {
+    width: 96vw;
+    height: 30rem;
 
-  .servicename {
-    margin-right: auto;
-  }
-
-  .app {
-    width: 100%;
-    height: 54%;
+    object-fit: cover;
   }
 }
