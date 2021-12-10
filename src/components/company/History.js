@@ -32,24 +32,36 @@ function formatDate(num) {
 function HistorySection() {
   const [selectedHistory, setHistory] = useState(historyData[0]);
   const clickHandler = (history) => setHistory(history);
+  const Tabs = ({ data }) => {
+    return data.map((item) => {
+      if (item.year === selectedHistory.year)
+        return (
+          <Tab key={item.year} selected onClick={() => clickHandler(item)}>
+            {item.year}
+          </Tab>
+        );
+      else
+        return (
+          <Tab key={item.year} onClick={() => clickHandler(item)}>
+            {item.year}
+          </Tab>
+        );
+    });
+  };
 
   return (
     <section className={styles.history}>
       <MainContainer>
-        <Caption>HISTORY</Caption>
-        <Heading3>연혁</Heading3>
+        <Caption className={styles.historyCaption}>HISTORY</Caption>
+        <Heading3 className={styles.historyTitle}>연혁</Heading3>
       </MainContainer>
       <div className={styles.historyTabSection}>
         <div className={styles.historyHorizontalLine}></div>
         <MainContainer className={styles.historyTabContainer}>
-          <Tab selected onClick={() => clickHandler(historyData[0])}>
-            2021
-          </Tab>
-          <Tab onClick={() => clickHandler(historyData[1])}>2020</Tab>
-          <Tab onClick={() => clickHandler(historyData[2])}>2020</Tab>
+          <Tabs data={historyData} />
         </MainContainer>
       </div>
-      <MainContainer>
+      <MainContainer className={styles.historyTableContainer}>
         <StyledTable data={selectedHistory} />
       </MainContainer>
     </section>
