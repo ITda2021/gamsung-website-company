@@ -8,7 +8,7 @@ const centerStyle = css`
     css`
       width: 100%;
       text-align: center;
-      @media (max-width: 768px) {
+      @media (max-width: 960px) {
         width: auto;
         text-align: left;
       }
@@ -21,7 +21,7 @@ const StyledHeading3 = styled.h3`
   line-height: 150%;
   color: ${(props) => props.color || palette.gray[9]};
   ${centerStyle}
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     font-size: 2.6rem;
     line-height: 145%;
   }

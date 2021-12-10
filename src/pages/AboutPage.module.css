@@ -167,10 +167,15 @@
   line-height: 160%;
 }
 
-@media (max-width: 768px) {
-  section {
+@media (max-width: 960px) {
+  .about,
+  .ceo,
+  .history,
+  .cooperation,
+  .conactus {
     padding: 5rem 0;
   }
+
 
   /*about*/
   .about {

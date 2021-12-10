@@ -8,7 +8,7 @@ const centerStyle = css`
     css`
       width: 100%;
       text-align: center;
-      @media (max-width: 768px) {
+      @media (max-width: 960px) {
         width: auto;
         text-align: left;
       }
@@ -22,7 +22,7 @@ const StyledCaption = styled.div`
   letter-spacing: 0.355em;
   color: ${(props) => props.color || palette.gray[3]};
   ${centerStyle}
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     font-size: 1.2rem;
     line-height: 125%;
   }

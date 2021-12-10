@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledMap = styled.div`
   width: 100%;
   height: 48rem;
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     height: 30rem;
   }
 `;

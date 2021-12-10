@@ -1,7 +1,7 @@
 import React from "react";
 
 import TheHeader from "components/TheHeader";
-import TheFooter from "components/TheFooter";
+//import TheFooter from "components/TheFooter";
 
 import MainContainer from "components/common/MainContainer";
 import { Link } from "react-router-dom";

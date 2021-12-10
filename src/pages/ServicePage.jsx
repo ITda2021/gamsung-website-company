@@ -1,6 +1,6 @@
 import React from "react";
 import TheHeader from "components/TheHeader";
-import TheFooter from "components/TheFooter";
+//import TheFooter from "components/TheFooter";
 import palette from "lib/style/palette.js";
 
 import Button from "components/common/button.js";
@@ -11,7 +11,7 @@ import Heading3 from "components/common/Heading3.js";
 import Paragraph from "components/common/Paragraph.js";
 
 import Modit from "img/service.png";
-import appstore from "img/appstore.png";
+//import appstore from "img/appstore.png";
 import styles from "./Service.module.css";
 
 function ServicePage() {

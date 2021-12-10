@@ -7,7 +7,7 @@ const StyledHeading1 = styled.h1`
   font-size: 5.4rem;
   line-height: 126.8%;
   color: ${(props) => props.color || palette.gray[9]};
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     font-size: 3.2rem;
   }
 `;

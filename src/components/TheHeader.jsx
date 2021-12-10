@@ -6,7 +6,6 @@ import MainContainer from "components/common/MainContainer.js";
 import styles from "components/TheHeader.module.css";
 
 import logo from "img/logo.svg";
-import engIcon from "img/ic-language-eng.svg";
 
 function TheHeader() {
   return (
@@ -58,11 +57,6 @@ function TheHeader() {
               </div>
             </ul>
           </nav>
-          <img
-            className={styles.languageIcon}
-            src={engIcon}
-            alt="영어 언어 변경 아이콘"
-          />
         </div>
       </MainContainer>
     </header>
