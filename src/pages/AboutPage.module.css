@@ -84,6 +84,28 @@
   padding-top: 1.5rem;
 }
 
+/*history*/
+
+.historyTabSection {
+  position: relative;
+}
+
+.historyHorizontalLine {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #E9EBED;
+  margin-top: 5.9rem;
+  z-index: -3;
+}
+
+.historyTabContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7.4rem;
+  margin-bottom: 3.6rem;
+}
+
 /*cooperation*/
 .cooperation {
   background-color: #f7f8f9;
@@ -167,8 +189,12 @@
   line-height: 160%;
 }
 
-@media (max-width: 768px) {
-  section {
+@media (max-width: 960px) {
+  .about,
+  .ceo,
+  .history,
+  .cooperation,
+  .conactus {
     padding: 5rem 0;
   }
 
