@@ -1,7 +1,5 @@
 # Getting Started with Create React App
-# 감성 회사 사이트 ~~~~~~~~서희
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# 감성소프트 회사 사이트
 ## Available Scripts
 
 In the project directory, you can run:
