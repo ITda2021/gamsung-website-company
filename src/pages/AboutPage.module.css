@@ -85,9 +85,17 @@
 }
 
 /*history*/
+.historyCaption {
+  margin-bottom: 1.9rem;
+}
+
+.historyTitle {
+  margin-bottom: 7.8rem;
+}
 
 .historyTabSection {
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .historyHorizontalLine {
@@ -100,10 +108,23 @@
 }
 
 .historyTabContainer {
+  width:100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 7.4rem;
+}
+
+.historyTabContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.historyTableContainer{
   display: flex;
   flex-wrap: wrap;
-  gap: 7.4rem;
-  margin-bottom: 3.6rem;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 /*cooperation*/
@@ -263,6 +284,31 @@
   .ceoWriterName {
     font-size: 1.4rem;
     padding-top: 1.2rem;
+  }
+
+  /*History*/
+  .historyCaption {
+    margin-bottom: .9rem;
+  }
+  
+  .historyTitle {
+    margin-bottom: 4.5rem;
+  }
+  
+  .historyTabSection {
+    margin-bottom: 2.7rem;
+  }
+  
+  .historyHorizontalLine {
+    margin-top: 4.2rem;
+  }
+  
+  .historyTabContainer {
+    gap: 4.8rem;
+  }
+  
+  .historyTableContainer{
+    justify-content: flex-start;
   }
 
   /*cooperation*/

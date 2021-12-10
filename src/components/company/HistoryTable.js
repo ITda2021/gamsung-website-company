@@ -3,8 +3,12 @@ import styled from "styled-components";
 import palette from "lib/style/palette";
 
 const StyledTable = styled.div`
+  min-height: 16rem;
+  width: 62%;
   padding: 1.6rem 0;
   @media (max-width: 960px) {
+    min-height: 14rem;
+    width: 100%;
     padding: 1.1rem 0;
   }
 `;
@@ -21,7 +25,10 @@ const TBody = styled.div`
 const TR = styled.div`
   display: flex;
   align-items: center;
-  gap: 4%;
+  gap: 7%;
+  @media (max-width: 960px) {
+    gap: 3.8rem;
+  }
 `;
 
 const TH = styled.div`
