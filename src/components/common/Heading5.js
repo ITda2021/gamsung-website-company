@@ -7,6 +7,11 @@ const StyledHeading5 = styled.h5`
   font-size: 2.2rem;
   line-height: 161.8%;
   color: ${(props) => props.color || palette.gray[0]};
+
+  &:hover,
+  &:focus {
+    color: ${(props) => props.color || palette.gray[4]};
+  }
   @media (max-width: 768px) {
     font-size: 2.2rem;
     line-height: 161.8%;

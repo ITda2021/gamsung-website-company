@@ -1,12 +1,13 @@
 import React from "react";
 
 import TheHeader from "components/TheHeader";
+import TheFooter from "components/TheFooter";
+
 import MainContainer from "components/common/MainContainer";
-import palette from "lib/style/palette.js";
 import { Link } from "react-router-dom";
 import Title from "components/common/Title.js";
 import Heading5 from "components/common/Heading5.js";
-import Paragraph from "components/main/Paragraph2.js";
+import Paragraph from "components/main/list.js";
 import arrow from "img/Vector2.png";
 import styles from "./Main.module.css";
 import Mainimage from "img/mainpage.png";
@@ -25,9 +26,7 @@ function MainPage() {
           <section className={styles.aboutshort}>
             <div className={styles.aboutcom_all}>
               <Link to="/about">
-                <Heading5 className={styles.aboutcom} color={palette.gray[1]}>
-                  About Company
-                </Heading5>
+                <Heading5 className={styles.aboutcom}>About Company</Heading5>
               </Link>
               <div className={styles.arrow}>
                 <Link to="/about">
@@ -37,9 +36,7 @@ function MainPage() {
             </div>
             <div className={styles.year_all}>
               <Link to="/about">
-                <Heading5 className={styles.year} color={palette.gray[1]}>
-                  연혁
-                </Heading5>
+                <Heading5 className={styles.year}>연혁</Heading5>
               </Link>
               <div className={styles.arrow}>
                 <Link to="/about">
@@ -49,9 +46,7 @@ function MainPage() {
             </div>
             <div className={styles.aboutmap_all}>
               <Link to="/about">
-                <Heading5 className={styles.aboutmap} color={palette.gray[1]}>
-                  오시는 길
-                </Heading5>
+                <Heading5 className={styles.aboutmap}>오시는 길</Heading5>
               </Link>
 
               <div className={styles.arrow}>
@@ -77,19 +72,13 @@ function MainPage() {
               </div>
             </div>
             <Link to="/service">
-              <Paragraph className={styles.servicenum} color={palette.gray[1]}>
-                모딧
-              </Paragraph>
+              <Paragraph className={styles.servicenum}>모딧</Paragraph>
             </Link>
             <Link to="/service">
-              <Paragraph className={styles.servicenum} color={palette.gray[1]}>
-                모딧2
-              </Paragraph>
+              <Paragraph className={styles.servicenum}>모딧2</Paragraph>
             </Link>
             <Link to="/service">
-              <Paragraph className={styles.servicenum} color={palette.gray[1]}>
-                모딧3
-              </Paragraph>
+              <Paragraph className={styles.servicenum}>모딧3</Paragraph>
             </Link>{" "}
           </section>
 
@@ -108,19 +97,13 @@ function MainPage() {
               </div>
             </div>
             <Link to="/notice/1">
-              <Paragraph className={styles.news} color={palette.gray[1]}>
-                최신뉴스
-              </Paragraph>
+              <Paragraph className={styles.news}>최신뉴스</Paragraph>
             </Link>
             <Link to="/notice/2">
-              <Paragraph className={styles.news} color={palette.gray[1]}>
-                최신뉴스
-              </Paragraph>
+              <Paragraph className={styles.news}>최신뉴스</Paragraph>
             </Link>
             <Link to="/notice/3">
-              <Paragraph className={styles.news} color={palette.gray[1]}>
-                최신뉴스
-              </Paragraph>
+              <Paragraph className={styles.news}>최신뉴스</Paragraph>
             </Link>{" "}
           </section>
         </section>
