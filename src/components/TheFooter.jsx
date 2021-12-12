@@ -8,7 +8,38 @@ import styles from "components/TheFooter.module.css";
 import logo from "img/logo.svg";
 import engIcon from "img/ic-print.svg";
 
-function TheHeader() {
+const SmallFooter = () => {
+  return (
+    <footer>
+      <MainContainer>
+        <div className={styles.footerTopContainer}>
+          <Link to="/">
+            <img className={styles.logoImg} src={logo} alt="로고 이미지" />
+          </Link>
+        </div>
+        <div className={styles.footerBottomContainer}>
+          <div className={styles.etcLinkAndSNSContainer}>
+            <ul className={styles.etcNavLinkList}>
+              <li className={styles.etcNavLink}>필요한메뉴</li>
+              <li className={styles.etcNavLink}>필요한메뉴</li>
+              <li className={styles.etcNavLink}>필요한메뉴</li>
+              <li className={styles.etcNavLink}>필요한메뉴</li>
+            </ul>
+            <div className={styles.snsIconsContainer}>
+              <img src={engIcon} alt="sns 아이콘" />
+              <img src={engIcon} alt="sns 아이콘" />
+            </div>
+          </div>
+          <div className={styles.copyright}>
+            © Gamsung Soft. All rights reserved.
+          </div>
+        </div>
+      </MainContainer>
+    </footer>
+  );
+};
+
+const BasicFooter = () => {
   return (
     <footer>
       <MainContainer>
@@ -66,6 +97,10 @@ function TheHeader() {
       </MainContainer>
     </footer>
   );
+};
+
+function TheFooter({ small = false }) {
+  return small ? SmallFooter() : BasicFooter();
 }
 
-export default TheHeader;
+export default TheFooter;
