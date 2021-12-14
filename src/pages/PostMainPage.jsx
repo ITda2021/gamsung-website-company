@@ -18,7 +18,7 @@ import TheFooter from "components/TheFooter";
 function PostMainPage() {
   return (
     <main>
-      <TheHeader />
+      <TheHeader selectedNavItem={"notice"} />
       <MainContainer>
         <section className={styles.noticesection1}>
           <Caption>NOTICE</Caption>
