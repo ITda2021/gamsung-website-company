@@ -11,7 +11,7 @@ import TheFooter from "components/TheFooter";
 function AboutPage() {
   return (
     <main>
-      <TheHeader />
+      <TheHeader selectedNavItem={"company"} />
       <AboutSection />
       <CeoSection />
       <HistorySection />

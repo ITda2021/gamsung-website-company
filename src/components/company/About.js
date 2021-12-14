@@ -12,7 +12,7 @@ import Company from "img/company-about-company.jpg";
 
 function AboutSection() {
   return (
-    <section className={styles.about}>
+    <section id="about" className={styles.about}>
       <MainContainer className={styles.aboutContainer}>
         <div className={styles.aboutContents}>
           <Caption className={styles.aboutCaption}>About Us</Caption>

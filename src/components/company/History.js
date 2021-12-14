@@ -50,7 +50,7 @@ function HistorySection() {
   };
 
   return (
-    <section className={styles.history}>
+    <section id={"history"} className={styles.history}>
       <MainContainer>
         <Caption className={styles.historyCaption}>HISTORY</Caption>
         <Heading3 className={styles.historyTitle}>연혁</Heading3>

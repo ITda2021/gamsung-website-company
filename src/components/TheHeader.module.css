@@ -1,16 +1,20 @@
 header {
   width: 100%;
-  padding-top: 2.5rem;
   height: 8rem;
   position: fixed;
   top:0;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.93);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
-  overflow: hidden;
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .headerContainer {
+  padding-top: 2.5rem;
   height: 100%;
   display: flex;
   position: relative;
@@ -20,6 +24,18 @@ header {
 
 .logoImg {
   width: 14.1rem;
+}
+
+.navLinkBackground{
+  z-index: 9;
+  position: fixed;
+  top:8rem;
+  width: 100%;
+  height: 24rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.04));
+  display: block;
 }
 
 .navContainer {
@@ -34,14 +50,10 @@ nav ul {
   gap: 2rem;
 }
 
-.navLinkListContainer {
-  display: flex;
-  gap: 8.3rem;
-}
-
 .navLinkList {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -49,27 +61,50 @@ nav ul {
   font-family: Montserrat;
   font-weight: 500;
   font-size: 1.4rem;
+}
+
+.navLink a {
   color: #9FA4A9;
-  text-align: center;
+  text-decoration: none;
+}
+
+.navLink a:hover {
+  animation: textColorChange 300ms ease-in-out forwards;
+}
+
+.navLink a::after {
+  content: "";
+  display: block;
+  background-color: #15171A;
+  width: 0%;
+  height: 2px;
+  margin-top: .2rem;
+}
+
+.navLink a:hover::after {
+  animation: lineStretch 300ms ease-in-out forwards;
 }
 
 .navLinkTitle {
   padding: .8rem 2rem;
   border-radius: 10rem;
-  margin-bottom: 3.4rem;
+  margin-bottom: 4.4rem;
 }
 
-.navLinkContainer a{
+.navLinkTitleSelected {
+  padding: .8rem 2rem;
+  border-radius: 10rem;
+  margin-bottom: 4.4rem;
+  background-color: #15171A;
+  color: #F7F8F9;
+}
+
+.navLinkContainer > a{
   font-family: Montserrat;
   font-weight: 600;
   font-size: 1.6rem;
   color: #464C52;
   text-decoration: none;
-}
-
-.languageIcon {
-  margin: .5rem 0 0 6%;
-  width: 2rem;
 }
 
 .menuBtn {
@@ -78,12 +113,42 @@ nav ul {
   width: 1.8rem;
   height: 1.4rem;
   display: none;
+  cursor: pointer;
 }
 
 .menuBtn div {
   width: 100%;
   height: 2px;
   background-color: #15171A;
+}
+
+.menuBtnClicked {
+  position: absolute;
+  right: 0;
+  width: 2rem;
+  height: 1.4rem;
+  margin-top: .6rem;
+  display: none;
+  cursor: pointer;
+}
+
+.menuBtnClicked div {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #15171A;
+}
+
+.menuBtnClicked div:first-child {
+  transform: rotate(135deg) translateX(0%);
+}
+
+.menuBtnClicked div:nth-child(2) {
+  transform: rotate(45deg) translateX(0%);
+}
+
+.menuBtnClicked div:last-child {
+  display: none;
 }
 
 .navLinkTitle:hover {
@@ -93,28 +158,95 @@ nav ul {
   -o-animation: changeBG 300ms forwards; /* Opera */
 }
 
+.overflowHidden {
+  overflow: hidden;
+}
+
+.displayNone {
+  display: none;
+}
 
 @media (max-width: 960px) {
   header {
     height: 7rem;
+    background: #ffffff;
+  }
+
+  .headerContainer {
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .logoImg {
     width: 8.7rem;
   }
 
-  .navContainer {
-    display: none;
-  }
-
   .menuBtn {
     display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .languageIcon {
-    display: none;
+  .menuBtnClicked {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navLinkBackground{
+    top:7rem;
+    width: 100%;
+    height: 100%;
+    background: #F7F8F9;
+  }
+  
+  .navContainer {
+    justify-content: stretch;
+    align-items: flex-start;
+    margin-top: 6rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+  
+  .navLinkList {
+    gap: 2rem;
+  }
+  
+  .navLink {
+    text-align: left;
+  }
+  
+  .navLinkTitle {
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 3.4rem;
+  }
+  
+  .navLinkContainer a{
+  }
+  
+}
+
+/*애니메이션*/
+
+@keyframes textColorChange {
+  0% {
+    color: #9FA4A9;
+  }
+  100% {
+    color: #15171A;
+  }
+}
+
+@keyframes lineStretch {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
   }
 }
 

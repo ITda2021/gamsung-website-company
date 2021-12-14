@@ -17,13 +17,13 @@ import styles from "./Service.module.css";
 function ServicePage() {
   return (
     <main>
-      <TheHeader />
+      <TheHeader selectedNavItem={"service"} />
       <MainContainer>
         <section className={styles.service}>
           <Caption>SERVICES</Caption>
           <Heading1> 대표 서비스를 소개합니다</Heading1>
         </section>
-        <section className={styles.service1}>
+        <section id={"service-modit"} className={styles.service1}>
           <div className={styles.servicename}>
             <div className={styles.int}>
               <Heading3 color={palette.blue[0]}>(주)감성소프트 "모딧"</Heading3>
