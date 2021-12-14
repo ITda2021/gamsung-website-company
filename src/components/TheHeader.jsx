@@ -8,6 +8,8 @@ import styles from "components/TheHeader.module.css";
 
 import logo from "img/logo.svg";
 
+// @param {String} selectedNavItem
+
 function TheHeader({ selectedNavItem = "home" }) {
   const [showMenu, setShowMenu] = useState(false);
   const clickHandler = () => setShowMenu(!showMenu);
