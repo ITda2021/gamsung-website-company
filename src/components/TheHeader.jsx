@@ -7,14 +7,13 @@ import MainContainer from "components/common/MainContainer.js";
 import styles from "components/TheHeader.module.css";
 
 import logo from "img/logo.svg";
-import { Fragment } from "react/cjs/react.development";
 
 function TheHeader({ selectedNavItem = "home" }) {
   const [showMenu, setShowMenu] = useState(false);
   const clickHandler = () => setShowMenu(!showMenu);
 
   return (
-    <Fragment>
+    <div>
       <header className={!showMenu ? styles.overflowHidden : undefined}>
         <MainContainer className={styles.headerContainer}>
           <Link to="/">
@@ -108,7 +107,7 @@ function TheHeader({ selectedNavItem = "home" }) {
         </MainContainer>
       </header>
       <div className={showMenu ? styles.navLinkBackground : undefined}></div>
-    </Fragment>
+    </div>
   );
 }
 
