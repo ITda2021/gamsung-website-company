@@ -17,7 +17,7 @@ import Cooperation8 from "img/company-cooperation-com8.jpg";
 
 function CooperationSection() {
   return (
-    <section className={styles.cooperation}>
+    <section id={"cooperation"} className={styles.cooperation}>
       <MainContainer>
         <Caption className={styles.cooperationCaption} center>
           COOPERATION

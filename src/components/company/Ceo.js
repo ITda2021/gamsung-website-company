@@ -13,7 +13,7 @@ import CeoBackground from "img/company-ceo-background.jpg";
 
 function CeoSection() {
   return (
-    <section className={styles.ceo}>
+    <section id={"ceo"} className={styles.ceo}>
       <img
         className={styles.ceoBackgroundImg}
         src={CeoBackground}

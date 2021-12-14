@@ -14,7 +14,7 @@ import PrintIcon from "img/ic-print.svg";
 
 function ContactSection() {
   return (
-    <section className={styles.conactus}>
+    <section id={"contactus"} className={styles.conactus}>
       <MainContainer>
         <Caption center className={styles.conactusCaption}>
           CONTACT US
