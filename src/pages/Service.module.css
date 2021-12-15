@@ -64,16 +64,17 @@
     padding-bottom: 4rem;
   }
   .int {
-    margin-right: 4.5rem;
+    margin-right: 4rem;
   }
   .service1 {
     padding-top: 5rem;
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
-  }
+    margin-right: 1rem;  }
+    }
   .paragraph {
-    margin-right: 0rem;
+    margin-right: 1rem;
   }
   .modit {
     margin-top: 4rem;
