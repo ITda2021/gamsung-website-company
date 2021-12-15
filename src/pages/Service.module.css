@@ -63,7 +63,9 @@
     padding-top: 10rem;
     padding-bottom: 4rem;
   }
-
+  .int {
+    margin-right: 4.5rem;
+  }
   .service1 {
     padding-top: 5rem;
     display: flex;
@@ -71,7 +73,7 @@
     margin-left: 1rem;
   }
   .paragraph {
-    margin-right: 2rem;
+    margin-right: 0rem;
   }
   .modit {
     margin-top: 4rem;
