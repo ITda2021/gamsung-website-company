@@ -21,6 +21,7 @@ function MainPage() {
         </section>
         <section className={styles.shortwhole}>
           <section className={styles.aboutshort}>
+            <hr className={styles.line} />
             <div className={styles.aboutcom_all}>
               <HashLink to="/about#about" style={{ textDecoration: "none" }}>
                 <Heading5 className={styles.aboutcom}>About Company</Heading5>
@@ -31,6 +32,7 @@ function MainPage() {
                 </HashLink>
               </div>
             </div>
+            <hr className={styles.subline} />{" "}
             <div className={styles.year_all}>
               <HashLink to="/about#history" style={{ textDecoration: "none" }}>
                 <Heading5 className={styles.year}>연혁</Heading5>
@@ -44,6 +46,7 @@ function MainPage() {
                 </HashLink>
               </div>
             </div>
+            <hr className={styles.subline} />{" "}
             <div className={styles.aboutmap_all}>
               <HashLink
                 to="/about#contactus"
@@ -65,6 +68,7 @@ function MainPage() {
           </section>
 
           <section className={styles.serviceshort}>
+            <hr className={styles.line} />{" "}
             <div className={styles.serviceshortcut_all}>
               <HashLink
                 to="/service#service-modit"
@@ -96,6 +100,7 @@ function MainPage() {
           </section>
 
           <section className={styles.recentnewsshort}>
+            <hr className={styles.line} />
             <div className={styles.recentnewsshortcut_all}>
               <HashLink to="/notice" style={{ textDecoration: "none" }}>
                 <Heading5 className={styles.recentnews_shortcut}>
