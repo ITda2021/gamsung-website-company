@@ -1,21 +1,19 @@
 import React from "react";
 
 import TheHeader from "components/TheHeader";
-//import TheFooter from "components/TheFooter";
+import TheFooter from "components/TheFooter";
 
 import MainContainer from "components/common/MainContainer";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Title from "components/common/Title.js";
 import Heading5 from "components/common/Heading5.js";
 import Paragraph from "components/main/list.js";
 import arrow from "img/Vector2.png";
 import styles from "./Main.module.css";
-import Mainimage from "img/mainpage.png";
 
 function MainPage() {
   return (
     <main className={styles.home}>
-      <img className={styles.homeImg} src={Mainimage} alt="메인이미지" />
       <TheHeader />
       <MainContainer>
         <section className={styles.intro}>
@@ -23,94 +21,112 @@ function MainPage() {
         </section>
         <section className={styles.shortwhole}>
           <section className={styles.aboutshort}>
+            <hr className={styles.line} />
             <div className={styles.aboutcom_all}>
-              <Link to="/about" style={{ textDecoration: "none" }}>
+              <HashLink to="/about#about" style={{ textDecoration: "none" }}>
                 <Heading5 className={styles.aboutcom}>About Company</Heading5>
-              </Link>
+              </HashLink>
               <div className={styles.arrow}>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <HashLink to="/about#about" style={{ textDecoration: "none" }}>
                   <img src={arrow} alt="arrow" />
-                </Link>
+                </HashLink>
               </div>
             </div>
+            <hr className={styles.subline} />{" "}
             <div className={styles.year_all}>
-              <Link to="/about" style={{ textDecoration: "none" }}>
+              <HashLink to="/about#history" style={{ textDecoration: "none" }}>
                 <Heading5 className={styles.year}>연혁</Heading5>
-              </Link>
+              </HashLink>
               <div className={styles.arrow}>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <HashLink
+                  to="/about#history"
+                  style={{ textDecoration: "none" }}
+                >
                   <img src={arrow} alt="arrow" />
-                </Link>
+                </HashLink>
               </div>
             </div>
+            <hr className={styles.subline} />{" "}
             <div className={styles.aboutmap_all}>
-              <Link to="/about" style={{ textDecoration: "none" }}>
+              <HashLink
+                to="/about#contactus"
+                style={{ textDecoration: "none" }}
+              >
                 <Heading5 className={styles.aboutmap}>오시는 길</Heading5>
-              </Link>
+              </HashLink>
 
               <div className={styles.arrow}>
-                <Link to="/about">
+                <HashLink to="/about#contactus">
                   <img
                     src={arrow}
                     alt="arrow"
                     style={{ textDecoration: "none" }}
                   />
-                </Link>
+                </HashLink>
               </div>
             </div>
           </section>
 
           <section className={styles.serviceshort}>
+            <hr className={styles.line} />{" "}
             <div className={styles.serviceshortcut_all}>
-              <Link to="/service" style={{ textDecoration: "none" }}>
+              <HashLink
+                to="/service#service-modit"
+                style={{ textDecoration: "none" }}
+              >
                 <Heading5 className={styles.serviceshortcut}>
                   Our Services
                 </Heading5>
-              </Link>
+              </HashLink>
 
               <div className={styles.arrow}>
-                <Link to="/service" style={{ textDecoration: "none" }}>
+                <HashLink
+                  to="/service#service-modit"
+                  style={{ textDecoration: "none" }}
+                >
                   <img src={arrow} alt="arrow" />
-                </Link>
+                </HashLink>
               </div>
             </div>
-            <Link to="/service" style={{ textDecoration: "none" }}>
+            <HashLink to="/service#" style={{ textDecoration: "none" }}>
               <Paragraph className={styles.servicenum}>모딧</Paragraph>
-            </Link>
-            <Link to="/service" style={{ textDecoration: "none" }}>
-              <Paragraph className={styles.servicenum}>모딧2</Paragraph>
-            </Link>
-            <Link to="/service" style={{ textDecoration: "none" }}>
-              <Paragraph className={styles.servicenum}>모딧3</Paragraph>
-            </Link>{" "}
+            </HashLink>
+            <HashLink to="/service" style={{ textDecoration: "none" }}>
+              <Paragraph className={styles.servicenum}> </Paragraph>
+            </HashLink>
+            <HashLink to="/service" style={{ textDecoration: "none" }}>
+              <Paragraph className={styles.servicenum}></Paragraph>
+            </HashLink>{" "}
           </section>
 
           <section className={styles.recentnewsshort}>
+            <hr className={styles.line} />
             <div className={styles.recentnewsshortcut_all}>
-              <Link to="/notice" style={{ textDecoration: "none" }}>
+              <HashLink to="/notice" style={{ textDecoration: "none" }}>
                 <Heading5 className={styles.recentnews_shortcut}>
                   Recent News
                 </Heading5>
-              </Link>
+              </HashLink>
 
               <div className={styles.arrow}>
-                <Link to="/notice" style={{ textDecoration: "none" }}>
+                <HashLink to="/notice" style={{ textDecoration: "none" }}>
                   <img src={arrow} alt="arrow" />
-                </Link>
+                </HashLink>
               </div>
             </div>
-            <Link to="/notice/1" style={{ textDecoration: "none" }}>
+            <HashLink to="/notice/1" style={{ textDecoration: "none" }}>
               <Paragraph className={styles.news}>최신뉴스</Paragraph>
-            </Link>
-            <Link to="/notice/2" style={{ textDecoration: "none" }}>
+            </HashLink>
+            <HashLink to="/notice/2" style={{ textDecoration: "none" }}>
               <Paragraph className={styles.news}>최신뉴스</Paragraph>
-            </Link>
-            <Link to="/notice/3" style={{ textDecoration: "none" }}>
+            </HashLink>
+            <HashLink to="/notice/3" style={{ textDecoration: "none" }}>
               <Paragraph className={styles.news}>최신뉴스</Paragraph>
-            </Link>{" "}
+            </HashLink>{" "}
           </section>
         </section>
       </MainContainer>
+      <TheFooter small={true} className="footer" />
     </main>
   );
 }

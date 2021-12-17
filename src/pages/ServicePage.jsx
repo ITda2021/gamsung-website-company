@@ -1,6 +1,6 @@
 import React from "react";
 import TheHeader from "components/TheHeader";
-//import TheFooter from "components/TheFooter";
+import TheFooter from "components/TheFooter";
 import palette from "lib/style/palette.js";
 
 import Button from "components/common/button.js";
@@ -58,6 +58,7 @@ function ServicePage() {
           <img className={styles.modit} src={Modit} alt="모딧 이미지" />
         </section>
       </MainContainer>
+      <TheFooter />
     </main>
   );
 }

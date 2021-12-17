@@ -1,13 +1,10 @@
 .home {
-  position: relative;
-}
-
-.homeImg {
-  position: absolute;
-  z-index: -2;
-  background-size: cover;
+  background-image: url("img/mainpage.png");
+  background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  contain: content;
+  background-size: cover;
+  z-index: -2;
 }
 
 .intro {
@@ -15,11 +12,25 @@
   margin-bottom: 0;
   margin-left: 2rem;
 }
+.line {
+  background-color: #f7f8f9;
+  height: 0.2rem;
+  border-radius: 1rem;
+  border: 0;
+  z-index: 2;
+}
+.subline {
+  background-color: #f7f8f9;
+  height: 0.2rem;
+  border-radius: 1rem;
+  opacity: 0.15;
+  border: 0;
+}
 .shortwhole {
-  padding: 26rem 0;
+  padding: 26rem 0 0;
+  margin-left: 30%;
   display: flex;
-  float: right;
-  width: auto;
+  align-items: flex-start;
 }
 .aboutshort {
   margin: 0;
@@ -27,6 +38,7 @@
   padding-bottom: 10.6rem;
   width: 30rem;
   height: fit-content;
+  padding-right: 3rem;
   margin-right: 0.4rem;
 }
 .aboutcom_all {
@@ -73,6 +85,7 @@
   width: 30rem;
   height: fit-content;
   margin-right: 0.4rem;
+  padding-right: 3rem;
 }
 .serviceshortcut_all {
   display: flex;
@@ -95,6 +108,7 @@
   width: 30rem;
   margin-right: 0.4rem;
   height: fit-content;
+  padding-right: 3rem;
 }
 .recentnewsshortcut_all {
   display: flex;
@@ -112,18 +126,26 @@
   align-items: center;
   padding: 0.7rem 1.1rem;
 }
+
 @media (max-width: 960px) {
   .homeImg {
     height: 100vh;
   }
   .intro {
     padding-top: 23rem;
-    margin-right: 40%;
+    margin-right: 30%;
   }
   .shortwhole {
     padding: 16rem 0;
+    margin-left: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+  .aboutshort {
+    padding-bottom: 5rem;
+  }
+  .serviceshort {
+    padding-bottom: 5rem;
   }
 }
