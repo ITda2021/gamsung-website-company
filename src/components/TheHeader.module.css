@@ -152,10 +152,10 @@ nav ul {
 }
 
 .navLinkTitle:hover {
-  animation: changeBG 300ms forwards;
-  -moz-animation: changeBG 300ms forwards; /* Firefox */
-  -webkit-animation: changeBG 300ms forwards; /* Safari and Chrome */
-  -o-animation: changeBG 300ms forwards; /* Opera */
+  animation: changeBG 300ms ease-in-out forwards;
+  -moz-animation: changeBG 300ms ease-in-out forwards; /* Firefox */
+  -webkit-animation: changeBG 300ms ease-in-out forwards; /* Safari and Chrome */
+  -o-animation: changeBG 300ms ease-in-out forwards; /* Opera */
 }
 
 .overflowHidden {
@@ -201,7 +201,7 @@ nav ul {
   }
   
   .navContainer {
-    justify-content: stretch;
+    justify-content: flex-start;
     align-items: flex-start;
     margin-top: 6rem;
   }
@@ -211,20 +211,38 @@ nav ul {
   }
   
   .navLinkList {
-    gap: 2rem;
+    gap: 2.2rem;
+    align-items: flex-start;
   }
   
   .navLink {
     text-align: left;
+    font-size: 1.1rem;
   }
-  
+
   .navLinkTitle {
     padding: 0;
     border-radius: 0;
-    margin-bottom: 3.4rem;
+    margin-bottom: 2.2rem;
   }
-  
-  .navLinkContainer a{
+
+  .navLinkTitleSelected {
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 2.2rem;
+    background-color: transparent;
+    color: #15171a;
+  }
+
+  .navLinkTitle:hover {
+    animation: none;
+    -moz-animation: none; /* Firefox */
+    -webkit-animation: none; /* Safari and Chrome */
+    -o-animation: none; /* Opera */
+  }
+
+  .navLinkContainer > a{
+    font-size: 1.3rem;
   }
   
 }

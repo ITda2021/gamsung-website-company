@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -10,7 +10,17 @@ import logo from "img/logo.svg";
 
 function TheHeader({ selectedNavItem = "home" }) {
   const [showMenu, setShowMenu] = useState(false);
-  const clickHandler = () => setShowMenu(!showMenu);
+  const menuClickHandler = () => setShowMenu(!showMenu);
+
+  const [screenWidthSize, setScreenWidthSize] = useState(window.innerWidth);
+  const windowResizeHandler = () => setScreenWidthSize(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", windowResizeHandler);
+    return () => {
+      window.removeEventListener("resize", windowResizeHandler);
+    };
+  }, []);
 
   return (
     <div>
@@ -20,7 +30,7 @@ function TheHeader({ selectedNavItem = "home" }) {
             <img className={styles.logoImg} src={logo} alt="로고 이미지" />
           </Link>
           <div
-            onClick={clickHandler}
+            onClick={menuClickHandler}
             className={!showMenu ? styles.menuBtn : styles.menuBtnClicked}
           >
             <div></div>
@@ -30,8 +40,8 @@ function TheHeader({ selectedNavItem = "home" }) {
           <div className={styles.navContainer}>
             <nav>
               <ul
-                onMouseOver={() => setShowMenu(true)}
-                onMouseOut={() => setShowMenu(false)}
+                onMouseOver={() => screenWidthSize > 960 && setShowMenu(true)}
+                onMouseOut={() => screenWidthSize > 960 && setShowMenu(false)}
               >
                 <div className={styles.navLinkContainer}>
                   <Link to="/about">
