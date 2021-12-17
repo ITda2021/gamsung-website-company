@@ -14,6 +14,8 @@ function TheHeader({ selectedNavItem = "home" }) {
   const [screenWidthSize, setScreenWidthSize] = useState(window.innerWidth);
   const windowResizeHandler = () => setScreenWidthSize(window.innerWidth);
 
+  const menuOnClick = () => screenWidthSize <= 960 && setShowMenu(false);
+
   useEffect(() => {
     window.addEventListener("resize", windowResizeHandler);
     return () => {
@@ -43,7 +45,7 @@ function TheHeader({ selectedNavItem = "home" }) {
                 onMouseOut={() => screenWidthSize > 960 && setShowMenu(false)}
               >
                 <div className={styles.navLinkContainer}>
-                  <Link to="/about">
+                  <Link to="/about" onClick={menuOnClick}>
                     <div
                       className={
                         selectedNavItem === "company"
@@ -55,19 +57,39 @@ function TheHeader({ selectedNavItem = "home" }) {
                     </div>
                   </Link>
                   <ul className={styles.navLinkList}>
-                    <li className={styles.navLink}>
+                    <li
+                      className={styles.navLink}
+                      onClick={menuOnClick}
+                      href="#about"
+                    >
                       <HashLink to="/about#about">ABOUT US</HashLink>
                     </li>
-                    <li className={styles.navLink} href="#ceo">
+                    <li
+                      className={styles.navLink}
+                      onClick={menuOnClick}
+                      href="#ceo"
+                    >
                       <HashLink to="/about#ceo">CEO</HashLink>
                     </li>
-                    <li className={styles.navLink} href="#history">
+                    <li
+                      className={styles.navLink}
+                      onClick={menuOnClick}
+                      href="#history"
+                    >
                       <HashLink to="/about#history">HISTORY</HashLink>
                     </li>
-                    <li className={styles.navLink} href="#cooperation">
+                    <li
+                      className={styles.navLink}
+                      onClick={menuOnClick}
+                      href="#cooperation"
+                    >
                       <HashLink to="/about#cooperation">COOPERATION</HashLink>
                     </li>
-                    <li className={styles.navLink} href="#contactus">
+                    <li
+                      className={styles.navLink}
+                      onClick={menuOnClick}
+                      href="#contactus"
+                    >
                       <HashLink to="/about#contactus">CONTACT US</HashLink>
                     </li>
                   </ul>
@@ -85,7 +107,7 @@ function TheHeader({ selectedNavItem = "home" }) {
                     </div>
                   </Link>
                   <ul className={styles.navLinkList}>
-                    <li className={styles.navLink}>
+                    <li className={styles.navLink} onClick={menuOnClick}>
                       <HashLink to="/service#service-modit">모딧</HashLink>
                     </li>
                   </ul>
@@ -103,11 +125,21 @@ function TheHeader({ selectedNavItem = "home" }) {
                     </div>
                   </Link>
                   <ul className={styles.navLinkList}>
-                    <li className={styles.navLink}>언론 보도 내용</li>
-                    <li className={styles.navLink}>채용 정보</li>
-                    <li className={styles.navLink}>회사 소식</li>
-                    <li className={styles.navLink}>수상 내역</li>
-                    <li className={styles.navLink}>특허 사항</li>
+                    <li className={styles.navLink} onClick={menuOnClick}>
+                      언론 보도 내용
+                    </li>
+                    <li className={styles.navLink} onClick={menuOnClick}>
+                      채용 정보
+                    </li>
+                    <li className={styles.navLink} onClick={menuOnClick}>
+                      회사 소식
+                    </li>
+                    <li className={styles.navLink} onClick={menuOnClick}>
+                      수상 내역
+                    </li>
+                    <li className={styles.navLink} onClick={menuOnClick}>
+                      특허 사항
+                    </li>
                   </ul>
                 </div>
               </ul>
