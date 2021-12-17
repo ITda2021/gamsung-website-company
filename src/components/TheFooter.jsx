@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import MainContainer from "components/common/MainContainer.js";
 
@@ -49,24 +50,41 @@ const BasicFooter = () => {
           </Link>
           <div className={styles.navLinkListContainer}>
             <div className={styles.navLinkContainer}>
-              <div className={styles.navLinkTitle}>COMPANY</div>
+              <div className={styles.navLinkTitle}>
+                <Link to="/about">COMPANY</Link>
+              </div>
               <ul className={styles.navLinkList}>
-                <li className={styles.navLink}>ABOUT US</li>
-                <li className={styles.navLink}>CEO</li>
-                <li className={styles.navLink}>TEAM</li>
-                <li className={styles.navLink}>HISTORY</li>
-                <li className={styles.navLink}>COOPERATION</li>
-                <li className={styles.navLink}>CONTACT US</li>
+                <li className={styles.navLink}>
+                  <HashLink to="/about#about">ABOUT US</HashLink>
+                </li>
+                <li className={styles.navLink}>
+                  <HashLink to="/about#ceo">CEO</HashLink>
+                </li>
+                <li className={styles.navLink}>
+                  <HashLink to="/about#history">HISTORY</HashLink>
+                </li>
+                <li className={styles.navLink}>
+                  <HashLink to="/about#cooperation">COOPERATION</HashLink>
+                </li>
+                <li className={styles.navLink}>
+                  <HashLink to="/about#contactus">CONTACT US</HashLink>
+                </li>
               </ul>
             </div>
             <div className={styles.navLinkContainer}>
-              <div className={styles.navLinkTitle}>SERVICE</div>
+              <div className={styles.navLinkTitle}>
+                <Link to="/service">SERVICE</Link>
+              </div>
               <ul className={styles.navLinkList}>
-                <li className={styles.navLink}>모딧</li>
+                <li className={styles.navLink}>
+                  <HashLink to="/service#service-modit">모딧</HashLink>
+                </li>
               </ul>
             </div>
             <div className={styles.navLinkContainer}>
-              <div className={styles.navLinkTitle}>공지사항</div>
+              <div className={styles.navLinkTitle}>
+                <Link to="/notice">공지사항</Link>
+              </div>
               <ul className={styles.navLinkList}>
                 <li className={styles.navLink}>언론 보도 내용</li>
                 <li className={styles.navLink}>채용 정보</li>
