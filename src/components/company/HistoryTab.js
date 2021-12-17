@@ -1,6 +1,15 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 //import palette from "lib/style/palette";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }`;
 
 const StyledTab = styled.div`
   display: flex;
@@ -12,6 +21,11 @@ const StyledTab = styled.div`
   @media (max-width: 960px) {
     gap: 1.2rem;
   }
+  ${(props) =>
+    props.selected &&
+    css`
+      animation: ${fadeIn} 300ms ease-in-out forwards;
+    `};
 `;
 
 const StyledTabText = styled.div`
