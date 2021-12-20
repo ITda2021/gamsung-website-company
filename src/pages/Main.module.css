@@ -50,8 +50,9 @@
   flex-direction: row;
   align-items: center;
   padding: 1.1rem;
-  width: 20rem;
+  width: 25rem;
 }
+
 .year_all {
   display: flex;
 }
@@ -60,7 +61,7 @@
   flex-direction: row;
   align-items: center;
   padding: 1.1rem;
-  width: 20rem;
+  width: 25rem;
 }
 .aboutmap_all {
   display: flex;
@@ -70,14 +71,13 @@
   flex-direction: row;
   align-items: center;
   padding: 1.1rem;
-  width: 20rem;
+  width: 25rem;
 }
 
 .arrow {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
-  width: 5rem;
 }
 
 .serviceshort {
@@ -95,7 +95,7 @@
   flex-direction: row;
   align-items: center;
   padding: 1.1rem;
-  width: 20rem;
+  width: 25rem;
 }
 .servicenum {
   display: flex;
@@ -118,7 +118,7 @@
   flex-direction: row;
   align-items: center;
   padding: 1.1rem;
-  width: 20rem;
+  width: 25rem;
 }
 .news {
   display: flex;
@@ -134,7 +134,33 @@
   .intro {
     padding-top: 23rem;
     margin-right: 30%;
+    white-space: pre-line;
+    word-wrap: break-word;
+    width: 78.13%;
   }
+  /*.intro의 width는 문구 확정되면 수정*/
+  .arrow {
+    margin-left: auto;
+  }
+  .aboutshort {
+    width: 100%;
+  }
+  .aboutcom {
+    width: 100%;
+  }
+  .year {
+    width: 100%;
+  }
+  .aboutmap {
+    width: 100%;
+  }
+  .serviceshortcut {
+    width: 100%;
+  }
+  .recentnews_shortcut {
+    width: 100%;
+  }
+
   .shortwhole {
     padding: 16rem 0;
     margin-left: 0;
@@ -144,8 +170,15 @@
   }
   .aboutshort {
     padding-bottom: 5rem;
+    padding-right: 0;
   }
   .serviceshort {
     padding-bottom: 5rem;
+    width: 100%;
+    padding-right: 0;
+  }
+  .recentnewsshort {
+    width: 100%;
+    padding-right: 0;
   }
 }
