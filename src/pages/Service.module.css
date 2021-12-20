@@ -19,8 +19,10 @@
   margin-bottom: 1.5rem;
 }
 .paragraph {
+  word-break: keep-all;
+  white-space: normal;
+  margin-right: 10.4167%;
   margin-bottom: 2rem;
-  margin-right: 15rem;
 }
 .modit {
   width: 40rem;
@@ -62,19 +64,33 @@
     display: flex;
     padding-top: 10rem;
     padding-bottom: 4rem;
+    white-space: pre-line;
+    word-wrap: break-word;
+    width: 18.4rem;
   }
+  .servicename {
+    padding-top: 4rem;
+  }
+
   .int {
     margin-right: 4rem;
   }
+  .serviceTitle {
+    white-space: pre-line;
+    word-wrap: break-word;
+    width: 78.13%;
+  }
+
   .service1 {
     padding-top: 5rem;
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
-    margin-right: 1rem;  }
-    }
-  .paragraph {
     margin-right: 1rem;
+  }
+
+  .paragraph {
+    margin-right: 0;
   }
   .modit {
     margin-top: 4rem;
