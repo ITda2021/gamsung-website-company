@@ -3,6 +3,7 @@ import MainPage from "pages/MainPage";
 import AboutPage from "pages/AboutPage";
 import ServicePage from "pages/ServicePage";
 import PostMainPage from "pages/PostMainPage";
+import PostWrite from "pages/PostWrite";
 import PostDetailPage from "pages/PostDetailPage";
 import ScrollToTop from "components/ScrollToTop";
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/service" element={<ServicePage />} />
             <Route path="/notice" element={<PostMainPage />} />
             <Route path="/notice/1" element={<PostDetailPage />} />
+            <Route path="/notice/newpost" element={<PostWrite />} />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>
