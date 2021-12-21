@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./postwrite.module.css";
-import { CKEditor } from "ckeditor4-react";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
@@ -16,7 +16,7 @@ function PostWrite() {
     { value: "patent", name: "특허사항" },
   ];
   const [PostContent, setPostContent] = useState({
-    category: "",
+    category: "media",
     title: "",
     content: "",
   });
@@ -51,10 +51,10 @@ function PostWrite() {
   };
 
   const handleChange = (e) => {
-    const { value } = e.target.value;
+    const value = e.target.value;
     setPostContent({
       ...PostContent,
-      [PostContent.category]: value,
+      category: value,
     });
     console.log(PostContent);
   };
@@ -81,7 +81,7 @@ function PostWrite() {
             />
             <select onChange={handleChange} value={PostContent.category}>
               {OPTIONS.map((item) => (
-                <option value={item} key={item}>
+                <option value={item.value} key={item.value}>
                   {item.name}
                 </option>
               ))}
