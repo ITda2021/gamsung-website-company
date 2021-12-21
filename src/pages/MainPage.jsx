@@ -2,7 +2,6 @@ import React from "react";
 
 import TheHeader from "components/TheHeader";
 import TheFooter from "components/TheFooter";
-
 import MainContainer from "components/common/MainContainer";
 import { HashLink } from "react-router-hash-link";
 import Title from "components/common/Title.js";

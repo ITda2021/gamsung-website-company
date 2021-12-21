@@ -32,14 +32,26 @@ footer {
 .navLinkTitle {
   font-weight: 600;
   font-size: 1.4rem;
-  color: #464C52;
   margin-bottom: 2rem;
+}
+
+.navLinkTitle  a {
+  text-decoration: none;
+  color: #464C52;
 }
 
 .navLink {
   font-weight: 500;
   font-size: 1.2rem;
+}
+
+.navLink a {
   color: #9FA4A9;
+  text-decoration: none;
+}
+
+.navLink a:hover {
+  color: #464C52;
 }
 
 .etcLinkAndSNSContainer {
