@@ -89,6 +89,7 @@ function PostWrite() {
           </div>
 
           <CKEditor
+            className={styles.editor}
             editor={ClassicEditor}
             data="<p>글을 입력하세요</p>"
             onReady={(editor) => {
