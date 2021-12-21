@@ -79,7 +79,11 @@ function PostWrite() {
               onChange={getValue}
               name="title"
             />
-            <select onChange={handleChange} value={PostContent.category}>
+            <select
+              className={styles.dropbox}
+              onChange={handleChange}
+              value={PostContent.category}
+            >
               {OPTIONS.map((item) => (
                 <option value={item.value} key={item.value}>
                   {item.name}
@@ -113,7 +117,7 @@ function PostWrite() {
           />
 
           <button className={styles.submitbutton} onClick={submitPost}>
-            입력
+            저장하기
           </button>
         </div>
       </div>{" "}

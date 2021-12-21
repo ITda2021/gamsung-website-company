@@ -16,9 +16,11 @@
   text-align: center;
   padding: 2rem;
 }
+
 .dropbox {
-  width: 12rem;
-  height: fit-content;
+  width: 13rem;
+  padding: 0.6rem;
+  font-family: "NotoSans-KR";
 }
 .Postcontainer {
   display: flex;
@@ -42,18 +44,28 @@
   width: 50rem;
   height: 4rem;
   margin: 1rem;
+  font-family: "NotoSans-KR";
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding-left: 1rem;
 }
 
 .submitbutton {
-  width: 10em;
-  height: 5rem;
-  font-size: 20px;
-  border: none;
-  background: indianred;
-  border-radius: 3rem;
+  width: 8em;
+  height: 3.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: #000000, 1rem;
+  border-radius: 2rem;
   margin-top: 2rem;
 }
-
+.submitbutton:focus:hover {
+  background-color: darkgrey;
+  font-weight: 800;
+}
+.editor {
+  font-size: 1.2rem;
+}
 .ck-editor__editable:not(.ck-editor__nested-editable) {
   min-height: 40rem;
 }
