@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TheHeader from "components/TheHeader";
 import MainContainer from "components/common/MainContainer";
 import NoticeDetailTitle from "components/notice/NoticeDetailTitle";
@@ -8,49 +8,103 @@ import NoticeDetailTable from "components/notice/NoticeDetailTable";
 import NoticeDetailContent from "components/notice/NoticeDetailContent";
 import NoticeDetailButton from "components/notice/NoticeDetailButton";
 import TheFooter from "components/TheFooter";
+import axios from "axios";
+import qs from "qs";
+import { Link } from "react-router-dom";
 
 //공지사항 세부페이지
-function PostPage() {
-  return (
-    <main>
-      <TheHeader selectedNavItem={"notice"} />
-      <MainContainer>
-        <section className={styles.postdetailsection}>
-          <NoticeDetailTable>
-            <div className={styles.postdetailheader}>
-              <NoticeDetailDate>2021.11.10</NoticeDetailDate>
-              <NoticeDetailTitle>
-                ‘모션 자막 쳄플릿 제작 프로젝트’진행 ( 모션그래퍼 /
-                일러스트레이터)
-              </NoticeDetailTitle>
-            </div>
-            <NoticeDetailContent>
-              ㈜감성소프트는 소비자에게 편리한 트렌디한 기술을 만들자는 것을
-              모토로 그동안 축적된 경험과 전문성에 기술혁신을 더하여 Kinetic
-              Typography 기반 모션 자막 템플릿 중점의 영상 편집 플랫폼을
-              제공하고 있습니다.㈜감성소프트는 소비자에게 편리한 트렌디한 기술을
-              만들자는 것을 모토로 그동안 축적된 경험과 전문성에 기술혁신을
-              더하여 Kinetic Typography 기반 모션 자막 템플릿 중점의 영상 편집
-              플랫폼을 제공하고 있습니다.㈜감성소프트는 소비자에게 편리한
-              트렌디한 기술을 만들자는 것을 모토로 그동안 축적된 경험과 전문성에
-              기술혁신을 더하여 Kinetic Typography 기반 모션 자막 템플릿 중점의
-              영상 편집 플랫폼을 제공하고 있습니다.㈜감성소프트는 소비자에게
-              편리한 트렌디한 기술을 만들자는 것을 모토로 그동안 축적된 경험과
-              전문성에 기술혁신을 더하여 Kinetic Typography 기반 모션 자막
-              템플릿 중점의 영상 편집 플랫폼을 제공하고 있습니다.㈜감성소프트는
-              소비자에게 편리한 트렌디한 기술을 만들자는 것을 모토로 그동안
-              축적된 경험과 전문성에 기술혁신을 더하여 Kinetic Typography 기반
-              모션 자막 템플릿 중점의 영상 편집 플랫폼을 제공하고 있습니다.
-            </NoticeDetailContent>
-          </NoticeDetailTable>
-          <div className={styles.postdetailbtn}>
-            <NoticeDetailButton>목록으로 돌아가기</NoticeDetailButton>
-          </div>
-        </section>
-      </MainContainer>
-      <TheFooter />
-    </main>
-  );
+export function useFetch(url, title) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  async function fetchUrl() {
+    await axios.get(`${url}?title=${title}`).then((response) => {
+      //console.log(response);
+      setData(response.data);
+    });
+    setLoading(false);
+  }
+  useEffect(() => {
+    if (title) {
+      //console.log("title: " + title);
+      fetchUrl();
+    } else {
+      //console.log("no data");
+      setData(null);
+      setLoading(false);
+    }
+  }, []);
+  return [data, loading];
 }
 
-export default PostPage;
+export function useFetch2(url) {
+  const [data, setData] = useState([]);
+  async function fetchUrl() {
+    const response = await fetch(url);
+    const json = await response.json();
+    setData(json);
+  }
+  useEffect(() => {
+    fetchUrl();
+  }, []);
+  return data;
+}
+
+const PostDetailPage = ({ location }) => {
+  const query = qs.parse(location.search, {
+    ignoreQueryPrefix: true,
+  });
+  console.log(location);
+  const [data, loading] = useFetch("/api/posts", query.title);
+  const boardData = useFetch2("/api/posts");
+  const deletePost = (title) => {
+    fetch(`/api/posts/${title}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      [...boardData].filter((i) => i.title !== title);
+    });
+  };
+  if (loading) {
+    return <div>loading</div>;
+  } else {
+    return (
+      <main>
+        <TheHeader selectedNavItem={"notice"} />
+        <MainContainer>
+          <section className={styles.postdetailsection}>
+            <NoticeDetailTable>
+              <div className={styles.postdetailheader}>
+                <NoticeDetailDate>{data.date}</NoticeDetailDate>
+                <NoticeDetailTitle>{data.title}</NoticeDetailTitle>
+              </div>
+              <NoticeDetailContent>{data.content}</NoticeDetailContent>
+            </NoticeDetailTable>
+            <div className={styles.postdetailbtn}>
+              <Link
+                to={{
+                  pathname: "/notice",
+                }}
+              >
+                <NoticeDetailButton>목록으로 돌아가기</NoticeDetailButton>
+              </Link>
+              <Link
+                to={{
+                  pathname: "/notice",
+                }}
+              >
+                <NoticeDetailButton onClick={() => deletePost(query.title)}>
+                  삭제하기
+                </NoticeDetailButton>
+              </Link>
+            </div>
+          </section>
+        </MainContainer>
+        <TheFooter />
+      </main>
+    );
+  }
+};
+export default PostDetailPage;
