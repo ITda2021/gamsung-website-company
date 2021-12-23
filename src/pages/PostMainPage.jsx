@@ -26,14 +26,14 @@ function PostMainPage() {
   };
 
   const getPostsByCategory = () => {
-    Axios.get(`http://3.130.190.15:8080/api/posts?category=${category}`).then(
-      (response) => {
-        setPosts(response.data);
-      }
-    );
+    Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
+      setPosts(response.data);
+    });
   };
 
-  getPostsByCategory();
+  useEffect(() => {
+    getPostsByCategory();
+  }, []);
 
   return (
     <main>
@@ -86,6 +86,7 @@ function PostMainPage() {
                   key={post.seq}
                   id={post.seq}
                   title={post.title}
+                  category={post.category}
                   date={post.created_at}
                 ></NoticeItem>
               );
