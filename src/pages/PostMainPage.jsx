@@ -19,20 +19,21 @@ import NoticeItem from "components/notice/NoticeItem";
 //공지사항 페이지 main
 function PostMainPage() {
   const [posts, setPosts] = useState([]);
-  const [category, setCategory] = useState("news");
+  const [category, setCategory] = useState();
 
-  const formatDate = (date) => {
-    return date.slice(0, 9);
-  };
-
-  const getPostsByCategory = () => {
-    Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
-      setPosts(response.data);
-    });
+  const handler = (value) => {
+    setCategory(value);
+    Axios.get(`http://3.130.190.15:8080/api/posts?category=${category}`).then(
+      (response) => {
+        setPosts(response.data);
+      }
+    );
   };
 
   useEffect(() => {
-    getPostsByCategory();
+    Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
+      setPosts(response.data);
+    });
   }, []);
 
   return (
@@ -48,27 +49,42 @@ function PostMainPage() {
         <section className={styles.noticesection2}>
           <NoticeNavStyle>
             <NoticeLi>
-              <div style={{ textDecoration: "none", color: "black" }}>
+              <div
+                onClick={() => handler("news")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 언론 보도 내용
               </div>
             </NoticeLi>
             <NoticeLi>
-              <div style={{ textDecoration: "none", color: "black" }}>
+              <div
+                onClick={() => handler("job")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 채용정보
               </div>
             </NoticeLi>
             <NoticeLi>
-              <div style={{ textDecoration: "none", color: "black" }}>
+              <div
+                onClick={() => handler("news")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 회사소식
               </div>
             </NoticeLi>
             <NoticeLi>
-              <div style={{ textDecoration: "none", color: "black" }}>
+              <div
+                onClick={() => handler("news")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 수상내역
               </div>
             </NoticeLi>
             <NoticeLi>
-              <div style={{ textDecoration: "none", color: "black" }}>
+              <div
+                onClick={() => handler("news")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 특허사항
               </div>
             </NoticeLi>
