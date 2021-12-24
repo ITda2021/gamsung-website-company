@@ -2,7 +2,13 @@
   border-bottom: 1px solid #e9ebed;
   font-weight: bold;
 }
-
+.background {
+  background: url("img/site_background.jpg") no-repeat;
+  height: 48rem;
+  z-index: 2;
+  background-size: cover;
+  margin-top: 9rem;
+}
 .noticeheader {
   margin-top: 2.5rem;
 }
@@ -34,7 +40,10 @@
   .noticesection1 {
     padding: 10.4rem 0 9rem;
   }
-
+  .background {
+    width: fit-content;
+    height: 30rem;
+  }
   .noticeheader {
     margin-top: 0.9rem;
   }
