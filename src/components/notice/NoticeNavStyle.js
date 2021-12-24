@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledNoticeNavStyle = styled.div`
-  margin-top: 2.7rem;
   @media (max-width: 960px) {
     display: flex;
     overflow-x: auto;
