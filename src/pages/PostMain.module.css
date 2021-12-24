@@ -4,7 +4,7 @@
 }
 .background {
   background: url("img/site_background.jpg") no-repeat;
-  height: 48rem;
+  height: 40rem;
   z-index: 2;
   background-size: cover;
   margin-top: 9rem;
