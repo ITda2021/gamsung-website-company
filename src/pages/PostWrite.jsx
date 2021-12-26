@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./postwrite.module.css";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { EditorState, convertToRaw } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import draftToHtml from "draftjs-to-html";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
-axios.defaults.withCredentials = true;
+import { Link } from "react-router-dom";
 
 function PostWrite() {
   const OPTIONS = [
@@ -16,25 +17,17 @@ function PostWrite() {
     { value: "patent", name: "특허사항" },
   ];
   const [PostContent, setPostContent] = useState({
-    category: "media",
+    category: "news",
     title: "",
     content: "",
   });
 
-  const [viewContent, setViewContent] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:8000/api/posts").then((response) => {
-      setViewContent(response.data);
-    });
-  }, [viewContent]);
-
   const submitPost = () => {
     axios
-      .post("http://localhost:3000/api/posts", {
-        category: PostWrite.category,
-        title: PostWrite.title,
-        content: PostWrite.data,
+      .post("http://3.130.190.15:8080/api/posts", {
+        category: PostContent.category,
+        title: PostContent.title,
+        content: draftToHtml(convertToRaw(editorState.getCurrentContent())),
       })
       .then(() => {
         alert("저장됨");
@@ -59,17 +52,16 @@ function PostWrite() {
     console.log(PostContent);
   };
 
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  const onEditorStateChange = (editorState) => {
+    setEditorState(editorState);
+  };
+
   return (
     <div className={styles.Postboard}>
       <h1 className={styles.title}>게시글 작성</h1>
       <div className={styles.Postcontainer}>
-        {viewContent.map((element) => (
-          <div>
-            <h2>{element.title}</h2>
-            <div>{element.content}</div>
-          </div>
-        ))}
-
         <div className={styles.formwrapper}>
           <div className={styles.head}>
             <input
@@ -91,36 +83,28 @@ function PostWrite() {
               ))}
             </select>
           </div>
-
-          <CKEditor
+          <Editor
+            editorState={editorState}
+            toolbarClassName="toolbarClassName"
+            wrapperClassName="wrapperClassName"
+            editorClassName="editorClassName"
+            onEditorStateChange={onEditorStateChange}
+            placeholder="내용을 작성해주세요."
+            data="글을 입력하세요"
+            localization={{
+              locale: "ko",
+            }}
             className={styles.editor}
-            editor={ClassicEditor}
-            data="<p>글을 입력하세요</p>"
-            onReady={(editor) => {
-              console.log("Editor is ready to use!", editor);
-            }}
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              console.log({ event, editor, data });
-              setPostContent({
-                ...PostContent,
-                content: data,
-              });
-              console.log(PostContent);
-            }}
-            onBlur={(event, editor) => {
-              console.log("Blur.", editor);
-            }}
-            onFocus={(event, editor) => {
-              console.log("Focus.", editor);
-            }}
+            editorState={editorState}
+            onEditorStateChange={onEditorStateChange}
           />
-
-          <button className={styles.submitbutton} onClick={submitPost}>
-            저장하기
-          </button>
+          <Link to={"/notice"}>
+            <button className={styles.submitbutton} onClick={submitPost}>
+              저장하기
+            </button>
+          </Link>
         </div>
-      </div>{" "}
+      </div>
     </div>
   );
 }
