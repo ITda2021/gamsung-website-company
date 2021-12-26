@@ -11,8 +11,7 @@ import NoticeTable from "components/notice/NoticeTable";
 import NoticeTitle from "components/notice/NoticeTitle";
 import NoticeDate from "components/notice/NoticeDate";
 import NoticePage from "components/notice/NoticePageCount";
-import before_btn from "img/notice_before_btn.png";
-import after_btn from "img/notice_after_btn.png";
+
 import TheFooter from "components/TheFooter";
 import NoticeItem from "components/notice/NoticeItem";
 
@@ -20,19 +19,40 @@ import NoticeItem from "components/notice/NoticeItem";
 function PostMainPage() {
   const [posts, setPosts] = useState([]);
   const [category, setCategory] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(10);
 
+  const indexOfLast = currentPage * postsPerPage;
+  const indexOfFirst = indexOfLast - postsPerPage;
+
+  const currentPosts = (tmp) => {
+    let currentPosts = 0;
+    currentPosts = tmp.slice(indexOfFirst, indexOfLast);
+    return currentPosts;
+  };
+
+  const totalPage = Math.ceil(posts.length / postsPerPage);
+  const nextPage = () => {
+    if (currentPage + 1 > totalPage) alert("마지막 페이지 입니다.");
+    else setCurrentPage(currentPage + 1);
+  };
+  const prevPage = () => {
+    if (currentPage - 1 < 1) alert("첫번째 페이지 입니다.");
+    else setCurrentPage(currentPage - 1);
+  };
   const handler = (value) => {
     setCategory(value);
     Axios.get(`http://3.130.190.15:8080/api/posts?category=${category}`).then(
       (response) => {
-        setPosts(response.data);
+        setPosts(response.data.reverse());
       }
     );
   };
 
   useEffect(() => {
     Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
-      setPosts(response.data);
+      setPosts(response.data.reverse());
+      currentPosts(posts);
     });
   }, []);
 
@@ -99,22 +119,26 @@ function PostMainPage() {
                 <NoticeTitle>제목</NoticeTitle>
                 <NoticeDate>작성일</NoticeDate>
               </div>
-              {posts.map((post) => {
+              {currentPosts(posts).map((post) => {
                 return (
                   <NoticeItem
                     key={post.seq}
                     id={post.seq}
                     title={post.title}
+                    date={post.created_at.slice(0, 10)}
                     category={post.category}
-                    date={post.created_at}
                   ></NoticeItem>
                 );
               })}
             </NoticeTable>
             <div className={styles.noticepagebar}>
-              <img src={before_btn} alt="이전 페이지로" />
-              <NoticePage>1/100</NoticePage>
-              <img src={after_btn} alt="다음 페이지로" />
+              <button className={styles.prevpage} onClick={prevPage}>
+                <span className={styles.prevpageSpan}></span>
+              </button>
+              <NoticePage>
+                {currentPage}/{totalPage}
+              </NoticePage>
+              <button className={styles.nextpage} onClick={nextPage} />
             </div>
           </section>
         </MainContainer>
