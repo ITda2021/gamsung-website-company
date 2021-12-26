@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 
 import TheHeader from "components/TheHeader";
 import TheFooter from "components/TheFooter";
@@ -11,6 +12,24 @@ import arrow from "img/Vector2.png";
 import styles from "./Main.module.css";
 
 function MainPage() {
+  const [posts, setPosts] = useState([]);
+  const OPTIONS = [
+    {
+      value: "news",
+      name: "언론 보도 내용",
+    },
+    { value: "job", name: "채용정보" },
+    { value: "company", name: "회사소식" },
+    { value: "award", name: "수상내역" },
+    { value: "patent", name: "특허사항" },
+  ];
+
+  useEffect(() => {
+    Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
+      setPosts(response.data.reverse().slice(0, 3));
+    });
+  }, []);
+
   return (
     <main className={styles.home}>
       <TheHeader />
@@ -112,15 +131,27 @@ function MainPage() {
                 </div>
               </div>
             </HashLink>
-            <HashLink to="/notice/1" style={{ textDecoration: "none" }}>
-              <Paragraph className={styles.news}>최신뉴스</Paragraph>
-            </HashLink>
-            <HashLink to="/notice/2" style={{ textDecoration: "none" }}>
-              <Paragraph className={styles.news}>최신뉴스</Paragraph>
-            </HashLink>
-            <HashLink to="/notice/3" style={{ textDecoration: "none" }}>
-              <Paragraph className={styles.news}>최신뉴스</Paragraph>
-            </HashLink>{" "}
+            {posts.map((post) => {
+              return (
+                <HashLink
+                  to={`/notice/${post.seq}`}
+                  key={post.seq}
+                  style={{ textDecoration: "none" }}
+                >
+                  {OPTIONS.map(({ value, name }) => {
+                    let categoryKR = "";
+                    if (post.category === value) {
+                      categoryKR = name;
+                      return (
+                        <Paragraph className={styles.news}>
+                          [{categoryKR}] {post.title}
+                        </Paragraph>
+                      );
+                    }
+                  })}
+                </HashLink>
+              );
+            })}
           </section>
         </section>
       </MainContainer>
