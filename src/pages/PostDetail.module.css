@@ -8,6 +8,18 @@
   margin: auto;
   display: block;
 }
+.delete {
+  margin: auto;
+  border: 1.5px solid #000000;
+  cursor: pointer;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  padding: 1.2rem 3rem;
+  border-radius: 4rem;
+  display: block;
+}
 
 @media (max-width: 960px) {
   .postdetailsection {

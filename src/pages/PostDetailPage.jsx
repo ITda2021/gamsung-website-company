@@ -11,6 +11,7 @@ import NoticeDetailButton from "components/notice/NoticeDetailButton";
 import TheFooter from "components/TheFooter";
 import Axios from "axios";
 import { Link } from "react-router-dom";
+import Button from "components/common/button";
 
 //공지사항 세부페이지
 function PostDetailPage() {
@@ -19,14 +20,21 @@ function PostDetailPage() {
   const params = useParams();
 
   useEffect(() => {
-    Axios.get(`http://3.130.190.15:8080/api/posts/${params.id}`).then(
-      (response) => {
-        console.log(response);
-        setPost(response.data);
-      }
-    );
-    setLoading(false);
+    async function fetchData() {
+      setLoading(true);
+      const response = await Axios.get(
+        `http://3.130.190.15:8080/api/posts/${params.id}`
+      );
+      setPost(response.data);
+      setLoading(false);
+    }
+    fetchData();
   }, []);
+
+  const deletePost = () => {
+    console.log("눌림");
+    Axios.delete(`http://3.130.190.15:8080/api/posts/${post.seq}`);
+  };
 
   if (loading) {
     return <div>loading</div>;
@@ -38,10 +46,14 @@ function PostDetailPage() {
           <section className={styles.postdetailsection}>
             <NoticeDetailTable>
               <div className={styles.postdetailheader}>
-                <NoticeDetailDate>{post.modified_at}</NoticeDetailDate>
+                <NoticeDetailDate>
+                  {post.created_at.slice(0, 10)}
+                </NoticeDetailDate>
                 <NoticeDetailTitle>{post.title}</NoticeDetailTitle>
               </div>
-              <NoticeDetailContent>{post.content}</NoticeDetailContent>
+              <NoticeDetailContent
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              ></NoticeDetailContent>
             </NoticeDetailTable>
             <div className={styles.postdetailbtn}>
               <Link to={"/notice"}>
@@ -52,9 +64,9 @@ function PostDetailPage() {
                   pathname: "/notice",
                 }}
               >
-                <NoticeDetailButton /*onClick={() => deletePost(query.title)}*/>
+                <button className={styles.delete} onClick={deletePost}>
                   삭제하기
-                </NoticeDetailButton>
+                </button>
               </Link>
             </div>
           </section>
