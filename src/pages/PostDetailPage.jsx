@@ -12,6 +12,7 @@ import TheFooter from "components/TheFooter";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 import Button from "components/common/button";
+import Spinner from "components/ScaleLoader";
 
 //공지사항 세부페이지
 function PostDetailPage() {
@@ -37,7 +38,12 @@ function PostDetailPage() {
   };
 
   if (loading) {
-    return <div>loading</div>;
+    return (
+      <MainContainer>
+        <div className={styles.loading}>Loading</div>
+        <Spinner />
+      </MainContainer>
+    );
   } else {
     return (
       <main>

@@ -21,6 +21,13 @@
   display: block;
 }
 
+.loading {
+  font-size: 6.4rem;
+  font-weight: bold;
+  margin: 30rem;
+  margin-bottom: 9.6rem;
+  text-align: center;
+}
 @media (max-width: 960px) {
   .postdetailsection {
     padding: 10rem 0;
