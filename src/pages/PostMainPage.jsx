@@ -21,7 +21,7 @@ function PostMainPage() {
   const [posts, setPosts] = useState([]);
   const [category, setCategory] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10);
+  const [postsPerPage, setPostsPerPage] = useState(5);
   const [isPrevButtonDisabled, setIsPrevButtonDisabled] = useState(true);
   const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
 
@@ -64,9 +64,10 @@ function PostMainPage() {
   };
 
   const handler = (value) => {
-    setCategory(value);
     Axios.get(`http://3.130.190.15:8080/api/posts?category=${value}`).then(
       (response) => {
+        setCategory(value);
+        setCurrentPage(1);
         setPosts(response.data.reverse());
       }
     );
