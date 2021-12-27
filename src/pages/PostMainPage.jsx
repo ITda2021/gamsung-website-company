@@ -120,15 +120,24 @@ function PostMainPage() {
                 <NoticeDate>작성일</NoticeDate>
               </div>
               {currentPosts(posts).map((post) => {
-                return (
-                  <NoticeItem
-                    key={post.seq}
-                    id={post.seq}
-                    title={post.title}
-                    date={post.created_at.slice(0, 10)}
-                    category={post.category}
-                  ></NoticeItem>
-                );
+                if (posts.length < 0) {
+                  return (
+                    <div>
+                      <NoticeTitle>글이 없습니다.</NoticeTitle>
+                      <NoticeDate></NoticeDate>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <NoticeItem
+                      key={post.seq}
+                      id={post.seq}
+                      title={post.title}
+                      date={post.created_at.slice(0, 10)}
+                      category={post.category}
+                    ></NoticeItem>
+                  );
+                }
               })}
             </NoticeTable>
             <div className={styles.noticepagebar}>
