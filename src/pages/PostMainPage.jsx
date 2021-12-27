@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import classNames from "classnames/bind";
 import TheHeader from "components/TheHeader";
 import Caption from "components/common/Caption.js";
 import MainContainer from "components/common/MainContainer";
@@ -11,7 +12,6 @@ import NoticeTable from "components/notice/NoticeTable";
 import NoticeTitle from "components/notice/NoticeTitle";
 import NoticeDate from "components/notice/NoticeDate";
 import NoticePage from "components/notice/NoticePageCount";
-
 import TheFooter from "components/TheFooter";
 import NoticeItem from "components/notice/NoticeItem";
 
@@ -21,9 +21,27 @@ function PostMainPage() {
   const [category, setCategory] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
+  const [isPrevButtonDisabled, setIsPrevButtonDisabled] = useState(true);
+  const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
+
+  const cx = classNames.bind(styles);
 
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
+  const totalPage = Math.ceil(posts.length / postsPerPage);
+
+  const changeBtnStateWithPage = (pageNum) => {
+    if (pageNum === 1) {
+      setIsPrevButtonDisabled(true);
+      setIsNextButtonDisabled(false);
+    } else if (pageNum === totalPage) {
+      setIsPrevButtonDisabled(false);
+      setIsNextButtonDisabled(true);
+    } else {
+      setIsPrevButtonDisabled(false);
+      setIsNextButtonDisabled(false);
+    }
+  };
 
   const currentPosts = (tmp) => {
     let currentPosts = 0;
@@ -31,15 +49,19 @@ function PostMainPage() {
     return currentPosts;
   };
 
-  const totalPage = Math.ceil(posts.length / postsPerPage);
   const nextPage = () => {
-    if (currentPage + 1 > totalPage) alert("마지막 페이지 입니다.");
-    else setCurrentPage(currentPage + 1);
+    if (currentPage + 1 <= totalPage) {
+      setCurrentPage(currentPage + 1);
+      changeBtnStateWithPage(currentPage + 1);
+    }
   };
   const prevPage = () => {
-    if (currentPage - 1 < 1) alert("첫번째 페이지 입니다.");
-    else setCurrentPage(currentPage - 1);
+    if (currentPage - 1 >= 1) {
+      setCurrentPage(currentPage - 1);
+      changeBtnStateWithPage(currentPage - 1);
+    }
   };
+
   const handler = (value) => {
     setCategory(value);
     Axios.get(`http://3.130.190.15:8080/api/posts?category=${category}`).then(
@@ -132,13 +154,23 @@ function PostMainPage() {
               })}
             </NoticeTable>
             <div className={styles.noticepagebar}>
-              <button className={styles.prevpage} onClick={prevPage}>
-                <span className={styles.prevpageSpan}></span>
+              <button className={cx("prevpage")} onClick={prevPage}>
+                <span
+                  className={cx("prevpageArrow", {
+                    buttonDisable: isPrevButtonDisabled,
+                  })}
+                ></span>
               </button>
               <NoticePage>
                 {currentPage}/{totalPage}
               </NoticePage>
-              <button className={styles.nextpage} onClick={nextPage} />
+              <button className={cx("nextpage")} onClick={nextPage}>
+                <span
+                  className={cx("nextpageArrow", {
+                    buttonDisable: isNextButtonDisabled,
+                  })}
+                ></span>
+              </button>
             </div>
           </section>
         </MainContainer>
