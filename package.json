@@ -6,6 +6,13 @@
     "@ckeditor/ckeditor5-build-classic": "^31.1.0",
     "@ckeditor/ckeditor5-build-inline": "^31.1.0",
     "@ckeditor/ckeditor5-react": "^3.0.3",
+    "@draft-js-plugins/alignment": "^5.0.2",
+    "@draft-js-plugins/drag-n-drop": "^4.2.1",
+    "@draft-js-plugins/drag-n-drop-upload": "^4.1.1",
+    "@draft-js-plugins/editor": "^4.1.0",
+    "@draft-js-plugins/focus": "^4.1.2",
+    "@draft-js-plugins/image": "^4.1.2",
+    "@draft-js-plugins/resizeable": "^5.0.2",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -13,6 +20,7 @@
     "ckeditor4-react": "^2.1.0",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.9.1",
+    "html-to-draftjs": "^1.5.0",
     "install": "^0.13.0",
     "node-html-parser": "^5.1.0",
     "npm": "^8.3.0",
@@ -52,8 +60,10 @@
   },
   "devDependencies": {
     "@iconify/react": "^3.1.0",
+    "css-loader": "^6.5.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "style-loader": "^3.3.1"
   }
 }
