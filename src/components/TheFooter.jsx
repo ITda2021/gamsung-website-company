@@ -27,8 +27,10 @@ const SmallFooter = () => {
               <li className={styles.etcNavLink}>필요한메뉴</li>
             </ul>
             <div className={styles.snsIconsContainer}>
-              <img src={engIcon} alt="sns 아이콘" />
-              <img src={engIcon} alt="sns 아이콘" />
+              <button
+                className={styles.youtube}
+                onClick={() => window.open("https://youtube.com", "_blank")}
+              />
             </div>
           </div>
           <div className={styles.copyright}>
@@ -86,11 +88,21 @@ const BasicFooter = () => {
                 <Link to="/notice">공지사항</Link>
               </div>
               <ul className={styles.navLinkList}>
-                <li className={styles.navLink}>언론 보도 내용</li>
-                <li className={styles.navLink}>채용 정보</li>
-                <li className={styles.navLink}>회사 소식</li>
-                <li className={styles.navLink}>수상 내역</li>
-                <li className={styles.navLink}>특허 사항</li>
+                <li className={styles.navLink}>
+                  <Link to="/notice">언론 보도 내용</Link>
+                </li>
+                <li className={styles.navLink}>
+                  <Link to="/notice">채용 정보</Link>
+                </li>
+                <li className={styles.navLink}>
+                  <Link to="/notice">회사 소식</Link>
+                </li>
+                <li className={styles.navLink}>
+                  <Link to="/notice">수상 내역</Link>
+                </li>
+                <li className={styles.navLink}>
+                  <Link to="/notice">특허 사항</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -104,8 +116,10 @@ const BasicFooter = () => {
               <li className={styles.etcNavLink}>필요한메뉴</li>
             </ul>
             <div className={styles.snsIconsContainer}>
-              <img src={engIcon} alt="sns 아이콘" />
-              <img src={engIcon} alt="sns 아이콘" />
+              <button
+                className={styles.youtube}
+                onClick={() => window.open("https://youtube.com", "_blank")}
+              />
             </div>
           </div>
           <div className={styles.copyright}>
