@@ -5,6 +5,7 @@ import ServicePage from "pages/ServicePage";
 import PostMainPage from "pages/PostMainPage";
 import PostWrite from "pages/PostWrite";
 import PostDetailPage from "pages/PostDetailPage";
+import NotFoundPage from "pages/NotFoundPage";
 import ScrollToTop from "components/ScrollToTop";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop>
           <Routes>
+            <Route path="*" element={<NotFoundPage />} />
             <Route path="/" element={<MainPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/service" element={<ServicePage />} />
