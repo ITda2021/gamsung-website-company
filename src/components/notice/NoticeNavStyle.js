@@ -7,7 +7,7 @@ const StyledNoticeNavStyle = styled.div`
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-
+    user-select: none;
     ::-webkit-scrollbar {
       display: none;
     }

@@ -14,6 +14,7 @@ import NoticeDate from "components/notice/NoticeDate";
 import NoticePage from "components/notice/NoticePageCount";
 import TheFooter from "components/TheFooter";
 import NoticeItem from "components/notice/NoticeItem";
+import NoPost from "components/notice/NoPost";
 
 //공지사항 페이지 main
 function PostMainPage() {
@@ -64,7 +65,7 @@ function PostMainPage() {
 
   const handler = (value) => {
     setCategory(value);
-    Axios.get(`http://3.130.190.15:8080/api/posts?category=${category}`).then(
+    Axios.get(`http://3.130.190.15:8080/api/posts?category=${value}`).then(
       (response) => {
         setPosts(response.data.reverse());
       }
@@ -74,7 +75,6 @@ function PostMainPage() {
   useEffect(() => {
     Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
       setPosts(response.data.reverse());
-      currentPosts(posts);
     });
   }, []);
 
@@ -82,7 +82,6 @@ function PostMainPage() {
     <div className={styles.background}>
       <main>
         <TheHeader selectedNavItem={"notice"} />
-
         <MainContainer>
           <section className={styles.noticesection1}>
             <Caption>NOTICE</Caption>
@@ -90,7 +89,6 @@ function PostMainPage() {
               새소식을 <br /> 확인하세요
             </Heading1>
           </section>
-
           <section className={styles.noticesection2}>
             <NoticeNavStyle>
               <NoticeLi>
@@ -141,15 +139,10 @@ function PostMainPage() {
                 <NoticeTitle>제목</NoticeTitle>
                 <NoticeDate>작성일</NoticeDate>
               </div>
-              {currentPosts(posts).map((post) => {
-                if (posts.length < 0) {
-                  return (
-                    <div>
-                      <NoticeTitle>글이 없습니다.</NoticeTitle>
-                      <NoticeDate></NoticeDate>
-                    </div>
-                  );
-                } else {
+              {currentPosts(posts).length === 0 ? (
+                <NoPost />
+              ) : (
+                currentPosts(posts).map((post) => {
                   return (
                     <NoticeItem
                       key={post.seq}
@@ -159,8 +152,8 @@ function PostMainPage() {
                       category={post.category}
                     ></NoticeItem>
                   );
-                }
-              })}
+                })
+              )}
             </NoticeTable>
             <div className={styles.noticepagebar}>
               <button className={cx("prevpage")} onClick={prevPage}>
@@ -171,7 +164,7 @@ function PostMainPage() {
                 ></span>
               </button>
               <NoticePage>
-                {currentPage}/{totalPage}
+                {currentPage}/{totalPage === 0 ? 1 : totalPage}
               </NoticePage>
               <button className={cx("nextpage")} onClick={nextPage}>
                 <span

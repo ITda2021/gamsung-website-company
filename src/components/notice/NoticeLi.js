@@ -11,6 +11,8 @@ const StyledNoticeLi = styled.li`
   border-right: 0.1rem solid ${(props) => props.color || palette.gray[2]};
   list-style:none;
   white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
   &:first-child{
     padding-left:0;
   }
