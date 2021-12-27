@@ -75,9 +75,18 @@
 }
 
 .arrow {
-  display: flex;
-  justify-content: right;
+  background: url("img/Vector2.png") no-repeat;
+  border: none;
+  padding: 1rem;
+  margin-top: 2rem;
+  height: 3rem;
+  cursor: pointer;
+
   align-items: center;
+  width: 1.5rem;
+}
+.arrow:hover {
+  background: url("img/vector2_hover.png") no-repeat;
 }
 
 .serviceshort {

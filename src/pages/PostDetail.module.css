@@ -19,6 +19,12 @@
   padding: 1.2rem 3rem;
   border-radius: 4rem;
   display: block;
+  background: #ffff;
+}
+
+.delete:hover {
+  background: #9fa4a9;
+  font-weight: bold;
 }
 
 @media (max-width: 960px) {

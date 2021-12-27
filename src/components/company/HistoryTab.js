@@ -18,6 +18,7 @@ const StyledTab = styled.div`
   align-items: center;
   gap: 2.3rem;
   cursor: pointer;
+
   @media (max-width: 960px) {
     gap: 1.2rem;
   }
@@ -34,6 +35,11 @@ const StyledTabText = styled.div`
   font-size: 2rem;
   line-height: 135%;
   color: ${(props) => (props.selected ? "#1b1d1f" : "#e9ebed")};
+
+  &:hover {
+    color: ${(props) => (props.selected ? "#9fa4a9" : "#9fa4a9")};
+  }
+
   @media (max-width: 960px) {
     font-size: 1.7rem;
   }
@@ -63,6 +69,7 @@ const StyledTabButton = styled.div`
   height: 1.1rem;
   border-radius: 50%;
   background: ${(props) => (props.selected ? "#464c52" : "#e9ebed")};
+
   @media (max-width: 960px) {
     width: 0.85rem;
     height: 0.85rem;

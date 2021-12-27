@@ -6,7 +6,6 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import draftToHtml from "draftjs-to-html";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 function PostWrite() {
   const OPTIONS = [
@@ -98,11 +97,10 @@ function PostWrite() {
             editorState={editorState}
             onEditorStateChange={onEditorStateChange}
           />
-          <Link to={"/notice"}>
-            <button className={styles.submitbutton} onClick={submitPost}>
-              저장하기
-            </button>
-          </Link>
+
+          <button className={styles.submitbutton} onClick={submitPost}>
+            저장하기
+          </button>
         </div>
       </div>
     </div>

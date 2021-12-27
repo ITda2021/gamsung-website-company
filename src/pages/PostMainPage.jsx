@@ -98,7 +98,7 @@ function PostMainPage() {
               <NoticeLi>
                 <div
                   onClick={() => handler("award")}
-                  style={{ textDecoration: "none", color: "black" }}
+                  className={styles.noticeli}
                 >
                   수상내역
                 </div>
