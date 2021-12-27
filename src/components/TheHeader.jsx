@@ -128,19 +128,19 @@ function TheHeader({ selectedNavItem = "home" }) {
                   </Link>
                   <ul className={styles.navLinkList}>
                     <li className={styles.navLink} onClick={menuOnClick}>
-                      언론 보도 내용
+                      <Link to="/notice"> 언론 보도 내용</Link>
                     </li>
                     <li className={styles.navLink} onClick={menuOnClick}>
-                      채용 정보
+                      <Link to="/notice"> 채용 정보</Link>
                     </li>
                     <li className={styles.navLink} onClick={menuOnClick}>
-                      회사 소식
+                      <Link to="/notice">회사 소식</Link>
                     </li>
                     <li className={styles.navLink} onClick={menuOnClick}>
-                      수상 내역
+                      <Link to="/notice">수상 내역</Link>
                     </li>
                     <li className={styles.navLink} onClick={menuOnClick}>
-                      특허 사항
+                      <Link to="/notice"> 특허 사항</Link>
                     </li>
                   </ul>
                 </div>

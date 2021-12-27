@@ -17,7 +17,8 @@ const StyledButton = styled.button`
   background: ${(props) => props.color || palette.gray[0]};
   &:hover,
   &:focus {
-    background: ${(props) => props.color || palette.gray[3]};
+    background: ${(props) => props.color || palette.gray[2]};
+    font-weight: bold;
   }
 `;
 export default Button;

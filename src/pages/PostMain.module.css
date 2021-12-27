@@ -38,6 +38,16 @@
   /*상 [좌=우] 하 */
   padding: 4.8rem 0 18rem;
 }
+.noticeList:hover > .noticeli {
+  color: #9fa4a9;
+}
+.noticeli {
+  text-decoration: none;
+  color: black;
+}
+.noticeli:hover {
+  color: #9fa4a9;
+}
 
 .editor {
   min-height: 40rem;

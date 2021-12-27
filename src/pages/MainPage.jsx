@@ -43,28 +43,21 @@ function MainPage() {
             <HashLink to="/about#about" style={{ textDecoration: "none" }}>
               <div className={styles.aboutcom_all}>
                 <Heading5 className={styles.aboutcom}>About Company</Heading5>
-                <div className={styles.arrow}>
-                  <HashLink
-                    to="/about#about"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <img src={arrow} alt="arrow" />
-                  </HashLink>{" "}
-                </div>
+                <HashLink to="/about#about" style={{ textDecoration: "none" }}>
+                  <button className={styles.arrow} />
+                </HashLink>
               </div>
             </HashLink>
             <hr className={styles.subline} />{" "}
             <HashLink to="/about#history" style={{ textDecoration: "none" }}>
               <div className={styles.year_all}>
                 <Heading5 className={styles.year}>연혁</Heading5>
-                <div className={styles.arrow}>
-                  <HashLink
-                    to="/about#history"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <img src={arrow} alt="arrow" />
-                  </HashLink>{" "}
-                </div>
+                <HashLink
+                  to="/about#history"
+                  style={{ textDecoration: "none" }}
+                >
+                  <button className={styles.arrow} />
+                </HashLink>
               </div>
             </HashLink>
             <hr className={styles.subline} />{" "}
@@ -72,16 +65,10 @@ function MainPage() {
               <div className={styles.aboutmap_all}>
                 <Heading5 className={styles.aboutmap}>오시는 길</Heading5>
 
-                <div className={styles.arrow}>
-                  <HashLink to="/about#contactus">
-                    <img
-                      src={arrow}
-                      alt="arrow"
-                      style={{ textDecoration: "none" }}
-                    />
-                  </HashLink>
-                </div>
-              </div>{" "}
+                <HashLink to="/about#contactus">
+                  <button className={styles.arrow} />
+                </HashLink>
+              </div>
             </HashLink>
           </section>
 
@@ -95,16 +82,13 @@ function MainPage() {
                 <Heading5 className={styles.serviceshortcut}>
                   Our Services
                 </Heading5>
-
-                <div className={styles.arrow}>
-                  <HashLink
-                    to="/service#service-modit"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <img src={arrow} alt="arrow" />
-                  </HashLink>
-                </div>
-              </div>{" "}
+                <HashLink
+                  to="/service#service-modit"
+                  style={{ textDecoration: "none" }}
+                >
+                  <button className={styles.arrow} />
+                </HashLink>
+              </div>
             </HashLink>
             <HashLink to="/service#" style={{ textDecoration: "none" }}>
               <Paragraph className={styles.servicenum}>모딧</Paragraph>
@@ -124,11 +108,9 @@ function MainPage() {
                 <Heading5 className={styles.recentnews_shortcut}>
                   Recent News
                 </Heading5>
-                <div className={styles.arrow}>
-                  <HashLink to="/notice" style={{ textDecoration: "none" }}>
-                    <img src={arrow} alt="arrow" />
-                  </HashLink>
-                </div>
+                <HashLink to="/notice" style={{ textDecoration: "none" }}>
+                  <button className={styles.arrow} />
+                </HashLink>
               </div>
             </HashLink>
             {posts.map((post) => {
