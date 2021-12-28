@@ -19,15 +19,9 @@
   padding: 1.2rem 3rem;
   border-radius: 4rem;
   display: block;
-  background: #ffff;
 }
 
-.delete:hover {
-  background: #9fa4a9;
-  font-weight: bold;
-}
-
-.loadingContainer{
+.loadingContainer {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,7 +29,7 @@
 }
 
 .loading {
-  margin-top:20rem;
+  margin-top: 20rem;
   font-size: 2.8rem;
   font-weight: bold;
   text-align: center;
@@ -66,7 +60,7 @@
 }
 .loader:before,
 .loader:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
 }
