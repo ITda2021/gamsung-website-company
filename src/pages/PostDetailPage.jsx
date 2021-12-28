@@ -12,7 +12,6 @@ import TheFooter from "components/TheFooter";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 import Button from "components/common/button";
-import Spinner from "components/ScaleLoader";
 
 //공지사항 세부페이지
 function PostDetailPage() {
@@ -39,10 +38,13 @@ function PostDetailPage() {
 
   if (loading) {
     return (
-      <MainContainer>
-        <div className={styles.loading}>Loading</div>
-        <Spinner />
-      </MainContainer>
+      <main>
+        <TheHeader selectedNavItem={"notice"} />
+        <MainContainer className={styles.loadingContainer}>
+          <div className={styles.loading}>게시글을 불러오고 있습니다.</div>
+          <div className={styles.loader}></div>
+        </MainContainer>
+      </main>
     );
   } else {
     return (

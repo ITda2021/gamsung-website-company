@@ -11,8 +11,8 @@ const StyledNoPost = styled.div`
   font-family: Noto Sans KR;
   font-size: 1.4rem;
   line-height: 2.5rem;
-  padding: 9rem 0rem;
-  border-radius: 4rem;
+  padding: 11rem 0rem;
+  text-align: center;
 `;
 
 export default NoPost;

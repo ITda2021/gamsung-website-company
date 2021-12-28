@@ -64,9 +64,10 @@ function PostMainPage() {
   };
 
   const handler = (value) => {
-    setCategory(value);
     Axios.get(`http://3.130.190.15:8080/api/posts?category=${value}`).then(
       (response) => {
+        setCategory(value);
+        setCurrentPage(1);
         setPosts(response.data.reverse());
       }
     );
