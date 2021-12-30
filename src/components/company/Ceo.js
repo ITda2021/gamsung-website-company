@@ -7,7 +7,7 @@ import Caption from "components/common/Caption.js";
 import Heading3 from "components/common/Heading3.js";
 import Paragraph from "components/common/Paragraph.js";
 
-import styles from "pages/AboutPage.module.css";
+import styles from "pages/CompanyPage.module.css";
 
 import CeoBackground from "img/company-ceo-background.jpg";
 

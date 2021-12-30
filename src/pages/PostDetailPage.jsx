@@ -4,7 +4,7 @@ import TheHeader from "components/TheHeader";
 import MainContainer from "components/common/MainContainer";
 import NoticeDetailTitle from "components/notice/NoticeDetailTitle";
 import NoticeDetailDate from "components/notice/NoticeDetailDate";
-import styles from "./PostDetail.module.css";
+import styles from "./PostDetailPage.module.css";
 import NoticeDetailTable from "components/notice/NoticeDetailTable";
 import NoticeDetailContent from "components/notice/NoticeDetailContent";
 import NoticeDetailButton from "components/notice/NoticeDetailButton";

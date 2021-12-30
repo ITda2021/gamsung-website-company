@@ -9,7 +9,7 @@ import Title from "components/common/Title.js";
 import Heading5 from "components/common/Heading5.js";
 import Paragraph from "components/main/list.js";
 import arrow from "img/Vector2.png";
-import styles from "./Main.module.css";
+import styles from "./MainPage.module.css";
 
 function MainPage() {
   const [posts, setPosts] = useState([]);

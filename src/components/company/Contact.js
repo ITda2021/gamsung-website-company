@@ -4,7 +4,7 @@ import MainContainer from "components/common/MainContainer.js";
 import Caption from "components/common/Caption.js";
 import Heading3 from "components/common/Heading3.js";
 
-import styles from "pages/AboutPage.module.css";
+import styles from "pages/CompanyPage.module.css";
 
 import Location from "lib/util/location.js";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./postwrite.module.css";
+import styles from "./PostEditPage.module.css";
 import { EditorState, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -8,7 +8,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function PostWrite() {
+function PostEditPage() {
   const OPTIONS = [
     { value: "news", name: "언론 보도 내용" },
     { value: "job", name: "채용정보" },
@@ -109,4 +109,4 @@ function PostWrite() {
   );
 }
 
-export default PostWrite;
+export default PostEditPage;

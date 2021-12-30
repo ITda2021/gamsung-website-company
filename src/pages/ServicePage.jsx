@@ -12,7 +12,7 @@ import Paragraph from "components/common/Paragraph.js";
 
 import Modit from "img/service.png";
 //import appstore from "img/appstore.png";
-import styles from "./Service.module.css";
+import styles from "./ServicePage.module.css";
 
 function ServicePage() {
   return (

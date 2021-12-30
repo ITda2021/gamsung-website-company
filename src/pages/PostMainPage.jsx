@@ -7,7 +7,7 @@ import MainContainer from "components/common/MainContainer";
 import Heading1 from "components/common/Heading1";
 import NoticeNavStyle from "components/notice/NoticeNavStyle";
 import NoticeLi from "components/notice/NoticeLi";
-import styles from "./PostMain.module.css";
+import styles from "./PostMainPage.module.css";
 import NoticeTable from "components/notice/NoticeTable";
 import NoticeTitle from "components/notice/NoticeTitle";
 import NoticeDate from "components/notice/NoticeDate";
