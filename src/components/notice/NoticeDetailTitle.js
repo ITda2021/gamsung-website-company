@@ -7,6 +7,7 @@ const StyledNoticeDetailTitle = styled.h4`
   font-size: 2.8rem;
   font-weight: 700;
   margin-top: 1.1rem;
+  line-height: 146.3%;
 `;
 
 function NoticeDetailTitle({ children, ...rest }) {
