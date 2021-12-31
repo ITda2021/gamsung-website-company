@@ -16,6 +16,7 @@ function App() {
           <Routes>
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/" element={<MainPage />} />
+            <Route path="/notfound" element={<NotFoundPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/notice" element={<PostMainPage />} />

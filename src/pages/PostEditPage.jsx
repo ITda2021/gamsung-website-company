@@ -17,53 +17,38 @@ function PostEditPage() {
     { value: "patent", name: "특허사항" },
   ];
 
-  const [post, setPost] = useState({
-    title: "",
-    category: OPTIONS[0].value,
-    content: "",
-  });
-
-  const onChange = (e) => {
-    console.log("제목이나 카테고리 바뀜");
-    const { value, name } = e.target;
-    setPost({
-      ...post,
-      [name]: value,
-    });
-    console.log(post);
-  };
-
-  const onChangeContent = (value) => {
-    console.log("콘텐츠 바뀜");
-    setPost(
-      {
-        ...post,
-        content: value,
-      },
-      console.log(post)
-    );
-  };
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState(OPTIONS[0].value);
+  const [content, setContent] = useState("");
+  const [createdAt, setCreatedAt] = useState("");
 
   const handleCancel = () => {
     navigate(-1);
   };
 
   const handleSubmit = () => {
-    if (post.title.trim() === "" || post.content.trim() === "") {
+    if (title.trim() === "" || content.trim() === "") {
       alert("내용을 입력해주세요.");
       return;
     }
     if (id) {
-      axios.put(`http://localhost:8080/api/posts/${id}`, post).then(() => {
-        alert("글이 수정되었습니다.");
-        navigate("/notice");
-      });
+      axios
+        .put(`http://localhost:8080/api/posts/${id}`, {
+          title,
+          category,
+          content,
+          created_at: createdAt.slice(0, 19).replace("T", " "),
+        })
+        .then(() => {
+          alert("글이 수정되었습니다.");
+          navigate("/notice");
+        });
     } else {
       axios
         .post("http://3.130.190.15:8080/api/posts", {
-          title: post.title,
-          category: post.category,
-          content: post.content,
+          title,
+          category,
+          content,
         })
         .then(() => {
           alert("글이 저장되었습니다.");
@@ -78,11 +63,10 @@ function PostEditPage() {
     }
     const fetchData = async () => {
       const response = await axios.get(`http://localhost:8080/api/posts/${id}`);
-      setPost(response.data);
-      console.log("=============");
-      console.log(response.data);
-      console.log("=============");
-      console.log(post);
+      setTitle(response.data.title);
+      setCategory(response.data.category);
+      setContent(response.data.content);
+      setCreatedAt(response.data.created_at);
     };
     fetchData();
   }, [id]);
@@ -112,17 +96,17 @@ function PostEditPage() {
                   className={styles.postTitle}
                   type="text"
                   placeholder="제목을 입력해 주세요."
-                  onChange={onChange}
+                  onChange={(e) => setTitle(e.target.value)}
                   name="title"
-                  value={post.title}
+                  value={title}
                 />
               </div>
               <div className={styles.postCategoryContainer}>
                 <label htmlFor="category">카테고리</label>
                 <select
                   className={styles.postCategory}
-                  onChange={onChange}
-                  value={post.category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  value={category}
                   name="category"
                 >
                   {OPTIONS.map((item) => (
@@ -133,7 +117,12 @@ function PostEditPage() {
                 </select>
               </div>
             </div>
-            <Editor value={post.content} onChange={onChangeContent} />
+            <Editor
+              value={content}
+              onChange={(value) => {
+                setContent(value);
+              }}
+            />
           </div>
         </MainContainer>
       </div>

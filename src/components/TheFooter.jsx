@@ -85,13 +85,6 @@ const BasicFooter = () => {
               <div className={styles.navLinkTitle}>
                 <Link to="/notice">공지사항</Link>
               </div>
-              <ul className={styles.navLinkList}>
-                <li className={styles.navLink}>언론 보도 내용</li>
-                <li className={styles.navLink}>채용 정보</li>
-                <li className={styles.navLink}>회사 소식</li>
-                <li className={styles.navLink}>수상 내역</li>
-                <li className={styles.navLink}>특허 사항</li>
-              </ul>
             </div>
           </div>
         </div>

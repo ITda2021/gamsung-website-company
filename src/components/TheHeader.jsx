@@ -126,23 +126,6 @@ function TheHeader({ selectedNavItem = "home" }) {
                       공지사항
                     </div>
                   </Link>
-                  <ul className={styles.navLinkList}>
-                    <li className={styles.navLink} onClick={menuOnClick}>
-                      언론 보도 내용
-                    </li>
-                    <li className={styles.navLink} onClick={menuOnClick}>
-                      채용 정보
-                    </li>
-                    <li className={styles.navLink} onClick={menuOnClick}>
-                      회사 소식
-                    </li>
-                    <li className={styles.navLink} onClick={menuOnClick}>
-                      수상 내역
-                    </li>
-                    <li className={styles.navLink} onClick={menuOnClick}>
-                      특허 사항
-                    </li>
-                  </ul>
                 </div>
               </ul>
             </nav>

@@ -25,9 +25,10 @@ function PostDetailPage() {
       const response = await axios.get(
         `http://3.130.190.15:8080/api/posts/${id}`
       );
-      setPost(response.data);
+      if (response.data === "") navigate("/notfound");
       setLoading(false);
     }
+
     fetchData();
   }, [id]);
 
@@ -60,7 +61,7 @@ function PostDetailPage() {
             <NoticeDetailTable>
               <div className={styles.postdetailheader}>
                 <NoticeDetailDate>
-                  {post.created_at.slice(0, 10)}
+                  {post.modified_at.slice(0, 10)}
                 </NoticeDetailDate>
                 <NoticeDetailTitle>{post.title}</NoticeDetailTitle>
                 <div className={styles.actionBtnsContainer}>
