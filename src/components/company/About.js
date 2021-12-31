@@ -6,9 +6,9 @@ import Heading3 from "components/common/Heading3.js";
 import Paragraph from "components/common/Paragraph.js";
 import Table from "components/company/AboutTable.js";
 
-import styles from "pages/AboutPage.module.css";
+import styles from "pages/CompanyPage.module.css";
 
-import Company from "img/company-about-company.jpg";
+import Company from "img/img_company.jpg";
 
 function AboutSection() {
   return (

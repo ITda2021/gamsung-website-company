@@ -8,7 +8,7 @@ import CooperationSection from "components/company/Cooperation.js";
 import ContactSection from "components/company/Contact.js";
 import TheFooter from "components/TheFooter";
 
-function AboutPage() {
+function CompanyPage() {
   return (
     <main>
       <TheHeader selectedNavItem={"company"} />
@@ -22,4 +22,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default CompanyPage;

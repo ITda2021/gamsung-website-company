@@ -81,6 +81,18 @@ footer {
   width: 1.7rem;
 }
 
+.youtube {
+  background: url("img/ic_youtube_hover.png") no-repeat;
+  border: none;
+  width: 4rem;
+  padding: 0;
+  height: 3rem;
+  cursor: pointer;
+}
+.youtube:hover {
+  background: url("img/ic_youtube.png") no-repeat;
+}
+
 .copyright {
   font-family: Montserrat;
   font-weight: 500;

@@ -6,7 +6,7 @@ import Heading3 from "components/common/Heading3.js";
 import Table from "components/company/HistoryTable.js";
 import Tab from "components/company/HistoryTab";
 
-import styles from "pages/AboutPage.module.css";
+import styles from "pages/CompanyPage.module.css";
 
 import { historyData } from "data/company-history";
 

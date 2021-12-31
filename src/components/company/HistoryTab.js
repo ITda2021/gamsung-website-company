@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css, keyframes } from "styled-components";
-//import palette from "lib/style/palette";
 
 const fadeIn = keyframes`
   0% {

@@ -1,56 +1,95 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import TheHeader from "components/TheHeader";
 import MainContainer from "components/common/MainContainer";
 import NoticeDetailTitle from "components/notice/NoticeDetailTitle";
 import NoticeDetailDate from "components/notice/NoticeDetailDate";
-import styles from "./PostDetail.module.css";
+import styles from "./PostDetailPage.module.css";
 import NoticeDetailTable from "components/notice/NoticeDetailTable";
 import NoticeDetailContent from "components/notice/NoticeDetailContent";
 import NoticeDetailButton from "components/notice/NoticeDetailButton";
 import TheFooter from "components/TheFooter";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 //공지사항 세부페이지
-function PostPage() {
-  return (
-    <main>
-      <TheHeader selectedNavItem={"notice"} />
-      <MainContainer>
-        <section className={styles.postdetailsection}>
-          <NoticeDetailTable>
-            <div className={styles.postdetailheader}>
-              <NoticeDetailDate>2021.11.10</NoticeDetailDate>
-              <NoticeDetailTitle>
-                ‘모션 자막 쳄플릿 제작 프로젝트’진행 ( 모션그래퍼 /
-                일러스트레이터)
-              </NoticeDetailTitle>
-            </div>
-            <NoticeDetailContent>
-              ㈜감성소프트는 소비자에게 편리한 트렌디한 기술을 만들자는 것을
-              모토로 그동안 축적된 경험과 전문성에 기술혁신을 더하여 Kinetic
-              Typography 기반 모션 자막 템플릿 중점의 영상 편집 플랫폼을
-              제공하고 있습니다.㈜감성소프트는 소비자에게 편리한 트렌디한 기술을
-              만들자는 것을 모토로 그동안 축적된 경험과 전문성에 기술혁신을
-              더하여 Kinetic Typography 기반 모션 자막 템플릿 중점의 영상 편집
-              플랫폼을 제공하고 있습니다.㈜감성소프트는 소비자에게 편리한
-              트렌디한 기술을 만들자는 것을 모토로 그동안 축적된 경험과 전문성에
-              기술혁신을 더하여 Kinetic Typography 기반 모션 자막 템플릿 중점의
-              영상 편집 플랫폼을 제공하고 있습니다.㈜감성소프트는 소비자에게
-              편리한 트렌디한 기술을 만들자는 것을 모토로 그동안 축적된 경험과
-              전문성에 기술혁신을 더하여 Kinetic Typography 기반 모션 자막
-              템플릿 중점의 영상 편집 플랫폼을 제공하고 있습니다.㈜감성소프트는
-              소비자에게 편리한 트렌디한 기술을 만들자는 것을 모토로 그동안
-              축적된 경험과 전문성에 기술혁신을 더하여 Kinetic Typography 기반
-              모션 자막 템플릿 중점의 영상 편집 플랫폼을 제공하고 있습니다.
-            </NoticeDetailContent>
-          </NoticeDetailTable>
-          <div className={styles.postdetailbtn}>
-            <NoticeDetailButton>목록으로 돌아가기</NoticeDetailButton>
-          </div>
-        </section>
-      </MainContainer>
-      <TheFooter />
-    </main>
-  );
-}
+function PostDetailPage() {
+  const navigate = useNavigate();
+  const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
-export default PostPage;
+  useEffect(() => {
+    async function fetchData() {
+      setLoading(true);
+      const response = await axios.get(
+        `http://www.gamsungsoft.com:8080/api/posts/${id}`
+      );
+      if (response.data === "") navigate("/notfound");
+      setLoading(false);
+    }
+
+    fetchData();
+  }, [id]);
+
+  const editPost = () => {
+    navigate(`/notice/edit/${id}`);
+  };
+
+  const deletePost = () => {
+    axios
+      .delete(`http://www.gamsungsoft.com:8080/api/posts/${post.seq}`)
+      .then(() => {
+        navigate(`/notice`);
+      });
+  };
+
+  if (loading) {
+    return (
+      <main>
+        <TheHeader selectedNavItem={"notice"} />
+        <MainContainer className={styles.loadingContainer}>
+          <div className={styles.loading}>게시글을 불러오고 있습니다.</div>
+          <div className={styles.loader}></div>
+        </MainContainer>
+      </main>
+    );
+  } else {
+    return (
+      <main>
+        <TheHeader selectedNavItem={"notice"} />
+        <MainContainer>
+          <section className={styles.postdetailsection}>
+            <NoticeDetailTable>
+              <div className={styles.postdetailheader}>
+                <NoticeDetailDate>
+                  {post.modified_at.slice(0, 10)}
+                </NoticeDetailDate>
+                <NoticeDetailTitle>{post.title}</NoticeDetailTitle>
+                <div className={styles.actionBtnsContainer}>
+                  <button className={styles.editBtn} onClick={editPost}>
+                    편집
+                  </button>
+                  <div></div>
+                  <button className={styles.deleteBtn} onClick={deletePost}>
+                    삭제
+                  </button>
+                </div>
+              </div>
+              <NoticeDetailContent
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              ></NoticeDetailContent>
+            </NoticeDetailTable>
+            <div className={styles.postdetailbtn}>
+              <NoticeDetailButton onClick={() => navigate(`/notice`)}>
+                목록으로 돌아가기
+              </NoticeDetailButton>
+            </div>
+          </section>
+        </MainContainer>
+        <TheFooter />
+      </main>
+    );
+  }
+}
+export default PostDetailPage;

@@ -4,13 +4,13 @@ import MainContainer from "components/common/MainContainer.js";
 import Caption from "components/common/Caption.js";
 import Heading3 from "components/common/Heading3.js";
 
-import styles from "pages/AboutPage.module.css";
+import styles from "pages/CompanyPage.module.css";
 
 import Location from "lib/util/location.js";
 
-import LocationIcon from "img/ic-location.svg";
-import PhoneIcon from "img/ic-phone.svg";
-import PrintIcon from "img/ic-print.svg";
+import LocationIcon from "img/ic_location.svg";
+import PhoneIcon from "img/ic_phone.svg";
+import PrintIcon from "img/ic_print.svg";
 
 function ContactSection() {
   return (

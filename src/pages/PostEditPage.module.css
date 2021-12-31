@@ -1,0 +1,120 @@
+.postBoard {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 0 18rem;
+}
+
+.postBoardHeader {
+  padding: 3rem 0 1.5rem 0;
+  position: sticky;
+  top:0;
+  background-color: #ffffff9c;
+  z-index: 2;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.04));
+  backdrop-filter: blur(8px);
+}
+
+.postBoardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postBoardTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #305497;
+}
+
+
+.postBoardBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cancelBtn,
+.submitBtn {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: Noto Sans KR;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+.cancelBtn {
+  background-color: #F7F8F9;
+  color: #26282B;
+}
+
+.submitBtn {
+  background-color: #305497;
+  color: #F7F8F9;
+}
+
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 5rem 0 3rem;
+}
+
+.postTitleContainer,
+.postCategoryContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.postTitleContainer {
+  width: 80%;
+}
+
+.postCategoryContainer {
+  width: 20%;
+  min-width: 16rem;
+}
+
+.postTitleContainer label,
+.postCategoryContainer label{
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #73787E;
+}
+
+.postTitleContainer label::after,
+.postCategoryContainer label::after{
+  content: "*";
+  color: #305497;
+}
+
+.postTitle,
+.postCategory {
+  font-family: Noto Sans KR;
+  padding: 1rem .5rem;
+  font-size: 1.6rem;
+  border: 1px solid #E9EBED;
+  border-radius: .3rem;
+}
+
+.postTitle:focus,
+.postCategory:focus {
+  outline: none;
+} 
+
+.postTitle::placeholder {
+  color: #9FA4A9;;
+}
+
+.editor {
+  font-size: 1.2rem;
+}
+.ck-editor__editable:not(.ck-editor__nested-editable) {
+  min-height: 40rem;
+}
