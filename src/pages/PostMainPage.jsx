@@ -64,18 +64,18 @@ function PostMainPage() {
   };
 
   const handler = (value) => {
-    Axios.get(`http://3.130.190.15:8080/api/posts?category=${value}`).then(
-      (response) => {
-        setCategory(value);
-        setCurrentPage(1);
-        setPosts(response.data.reverse());
-        setCurrentClick(value);
-      }
-    );
+    Axios.get(
+      `http://www.gamsungsoft.com:8080/api/posts?category=${value}`
+    ).then((response) => {
+      setCategory(value);
+      setCurrentPage(1);
+      setPosts(response.data.reverse());
+      setCurrentClick(value);
+    });
   };
 
   useEffect(() => {
-    Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
+    Axios.get(`http://www.gamsungsoft.com:8080/api/posts`).then((response) => {
       setPosts(response.data.reverse());
     });
   }, []);
@@ -84,7 +84,6 @@ function PostMainPage() {
     (e) => {
       if (currentClick !== null) {
         let current = document.getElementById(currentClick);
-        // console.log(current);
         current.style.fontWeight = "bold";
       }
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import TheHeader from "components/TheHeader";
 import MainContainer from "components/common/MainContainer";
 import styles from "./NotFoundPage.module.css";
-import ErrorIcon from "img/ic-error.svg";
+import ErrorIcon from "img/ic_error.svg";
 
 //공지사항 페이지 main
 function NotFoundPage() {

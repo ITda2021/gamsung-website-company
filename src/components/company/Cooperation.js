@@ -6,14 +6,14 @@ import Heading3 from "components/common/Heading3.js";
 
 import styles from "pages/CompanyPage.module.css";
 
-import Cooperation1 from "img/company-cooperation-com1.jpg";
-import Cooperation2 from "img/company-cooperation-com2.jpg";
-import Cooperation3 from "img/company-cooperation-com3.jpg";
-import Cooperation4 from "img/company-cooperation-com4.jpg";
-import Cooperation5 from "img/company-cooperation-com5.jpg";
-import Cooperation6 from "img/company-cooperation-com6.jpg";
-import Cooperation7 from "img/company-cooperation-com7.jpg";
-import Cooperation8 from "img/company-cooperation-com8.jpg";
+import Cooperation1 from "img/img_cooperation_com1.jpg";
+import Cooperation2 from "img/img_cooperation_com2.jpg";
+import Cooperation3 from "img/img_cooperation_com3.jpg";
+import Cooperation4 from "img/img_cooperation_com4.jpg";
+import Cooperation5 from "img/img_cooperation_com5.jpg";
+import Cooperation6 from "img/img_cooperation_com6.jpg";
+import Cooperation7 from "img/img_cooperation_com7.jpg";
+import Cooperation8 from "img/img_cooperation_com8.jpg";
 
 function CooperationSection() {
   return (

@@ -9,7 +9,7 @@ import Paragraph from "components/common/Paragraph.js";
 
 import styles from "pages/CompanyPage.module.css";
 
-import CeoBackground from "img/company-ceo-background.jpg";
+import CeoBackground from "img/bg_ceo.jpg";
 
 function CeoSection() {
   return (

@@ -8,7 +8,7 @@ import { HashLink } from "react-router-hash-link";
 import Title from "components/common/Title.js";
 import Heading5 from "components/common/Heading5.js";
 import Paragraph from "components/main/list.js";
-import arrow from "img/Vector2.png";
+import arrow from "img/ic_arrow.png";
 import styles from "./MainPage.module.css";
 
 function MainPage() {
@@ -25,7 +25,7 @@ function MainPage() {
   ];
 
   useEffect(() => {
-    Axios.get(`http://3.130.190.15:8080/api/posts`).then((response) => {
+    Axios.get(`http://www.gamsungsoft.com:8080/api/posts`).then((response) => {
       setPosts(response.data.reverse().slice(0, 3));
     });
   }, []);

@@ -33,7 +33,7 @@ function PostEditPage() {
     }
     if (id) {
       axios
-        .put(`http://localhost:8080/api/posts/${id}`, {
+        .put(`http://www.gamsungsoft.com:8080/api/posts/${id}`, {
           title,
           category,
           content,
@@ -45,7 +45,7 @@ function PostEditPage() {
         });
     } else {
       axios
-        .post("http://3.130.190.15:8080/api/posts", {
+        .post("http://www.gamsungsoft.com:8080/api/posts", {
           title,
           category,
           content,
@@ -62,7 +62,9 @@ function PostEditPage() {
       return;
     }
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:8080/api/posts/${id}`);
+      const response = await axios.get(
+        `http://www.gamsungsoft.com:8080/api/posts/${id}`
+      );
       setTitle(response.data.title);
       setCategory(response.data.category);
       setContent(response.data.content);

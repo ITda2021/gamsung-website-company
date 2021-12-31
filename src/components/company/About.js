@@ -8,7 +8,7 @@ import Table from "components/company/AboutTable.js";
 
 import styles from "pages/CompanyPage.module.css";
 
-import Company from "img/company-about-company.jpg";
+import Company from "img/img_company.jpg";
 
 function AboutSection() {
   return (

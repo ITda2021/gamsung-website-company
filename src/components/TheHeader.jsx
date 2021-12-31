@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 import MainContainer from "components/common/MainContainer.js";
 import styles from "components/TheHeader.module.css";
 
-import logo from "img/logo.svg";
+import logo from "img/img_logo.svg";
 
 // @param {String} selectedNavItem
 

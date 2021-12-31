@@ -3,15 +3,14 @@ import TheHeader from "components/TheHeader";
 import TheFooter from "components/TheFooter";
 import palette from "lib/style/palette.js";
 
-import Button from "components/common/button.js";
+import Button from "components/common/Button.js";
 import MainContainer from "components/common/MainContainer.js";
 import Caption from "components/common/Caption.js";
 import Heading1 from "components/common/Heading1.js";
 import Heading3 from "components/common/Heading3.js";
 import Paragraph from "components/common/Paragraph.js";
 
-import Modit from "img/service.png";
-//import appstore from "img/appstore.png";
+import Modit from "img/img_service_modit.png";
 import styles from "./ServicePage.module.css";
 
 function ServicePage() {
@@ -33,7 +32,7 @@ function ServicePage() {
         <section id={"service-modit"} className={styles.service1}>
           <div className={styles.servicename}>
             <div className={styles.int}>
-              <Heading3 color={palette.blue[0]}>(주)감성소프트 "모딧"</Heading3>
+              <Heading3 color={palette.blue}>(주)감성소프트 "모딧"</Heading3>
               <Heading3 className={styles.serviceTitle}>
                 국내 최대 자막 템플릿 제공 영상편집기
               </Heading3>

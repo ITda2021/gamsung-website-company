@@ -1,5 +1,5 @@
 .background {
-  background: url("img/site_background.jpg") no-repeat;
+  background: url("img/bg_site_header.jpg") no-repeat;
   height: 40rem;
   z-index: 2;
   background-size: cover;
@@ -27,6 +27,12 @@
 .int {
   margin-bottom: 1.5rem;
 }
+.serviceTitle {
+  white-space: pre-line;
+  word-break: keep-all;
+  width: 78.13%;
+}
+
 .paragraph {
   word-break: keep-all;
   white-space: normal;
@@ -45,7 +51,7 @@
   align-items: center;
 }
 .playstore {
-  background: url("img/playstore.png") no-repeat;
+  background: url("img/ic_playstore.png") no-repeat;
   border: none;
   width: 3rem;
   height: 3rem;
@@ -56,20 +62,7 @@
 .playstore:hover {
   opacity: 70%;
 }
-/*
-.appstore {
-  background: url("img/appstore.png") no-repeat;
-  border: none;
-  width: 3rem;
-  height: 3rem;
-  object-fit: contain;
-  margin-left: 2rem;
-  cursor: pointer;
-}
-.appstore:hover {
-  opacity: 70%;
-}
-*/
+
 @media (max-width: 960px) {
   .service {
     display: flex;

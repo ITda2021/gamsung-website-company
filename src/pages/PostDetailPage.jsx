@@ -23,7 +23,7 @@ function PostDetailPage() {
     async function fetchData() {
       setLoading(true);
       const response = await axios.get(
-        `http://3.130.190.15:8080/api/posts/${id}`
+        `http://www.gamsungsoft.com:8080/api/posts/${id}`
       );
       if (response.data === "") navigate("/notfound");
       setLoading(false);
@@ -37,9 +37,11 @@ function PostDetailPage() {
   };
 
   const deletePost = () => {
-    axios.delete(`http://3.130.190.15:8080/api/posts/${post.seq}`).then(() => {
-      navigate(`/notice`);
-    });
+    axios
+      .delete(`http://www.gamsungsoft.com:8080/api/posts/${post.seq}`)
+      .then(() => {
+        navigate(`/notice`);
+      });
   };
 
   if (loading) {

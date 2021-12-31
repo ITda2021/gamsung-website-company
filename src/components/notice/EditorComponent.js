@@ -21,7 +21,7 @@ function Editor({ value, onChange }) {
       formData.append("img", file);
       try {
         const result = await axios.post(
-          "http://localhost:8080/img",
+          "http://www.gamsungsoft.com:8080/api/img",
           formData,
           config
         );

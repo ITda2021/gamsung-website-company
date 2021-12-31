@@ -4,7 +4,7 @@
 }
 
 .home {
-  background-image: url("img/mainpage.png");
+  background-image: url("img/bg_main.png");
   background-repeat: no-repeat;
   width: 100%;
   contain: content;

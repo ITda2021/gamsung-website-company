@@ -6,8 +6,8 @@ import MainContainer from "components/common/MainContainer.js";
 
 import styles from "components/TheFooter.module.css";
 
-import logo from "img/logo.svg";
-import engIcon from "img/ic-print.svg";
+import logo from "img/img_logo.svg";
+import engIcon from "img/ic_print.svg";
 
 const SmallFooter = () => {
   return (
@@ -97,8 +97,10 @@ const BasicFooter = () => {
               <li className={styles.etcNavLink}>필요한메뉴</li>
             </ul>
             <div className={styles.snsIconsContainer}>
-              <img src={engIcon} alt="sns 아이콘" />
-              <img src={engIcon} alt="sns 아이콘" />
+              <button
+                className={styles.youtube}
+                onClick={() => window.open("https://youtube.com", "_blank")}
+              />
             </div>
           </div>
           <div className={styles.copyright}>
