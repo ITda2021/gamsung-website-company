@@ -78,9 +78,9 @@ function PostMainPage() {
   }, []);
 
   return (
-    <div className={styles.background}>
-      <main>
-        <TheHeader selectedNavItem={"notice"} />
+    <main>
+      <TheHeader selectedNavItem={"notice"} />
+      <div className={styles.background}>
         <MainContainer>
           <section className={styles.noticesection1}>
             <Caption>NOTICE</Caption>
@@ -88,96 +88,98 @@ function PostMainPage() {
               새소식을 <br /> 확인하세요
             </Heading1>
           </section>
-          <section className={styles.noticesection2}>
-            <NoticeNavStyle>
-              <NoticeLi>
-                <div
-                  onClick={() => handler("news")}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  언론 보도 내용
-                </div>
-              </NoticeLi>
-              <NoticeLi>
-                <div
-                  onClick={() => handler("job")}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  채용정보
-                </div>
-              </NoticeLi>
-              <NoticeLi>
-                <div
-                  onClick={() => handler("company")}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  회사소식
-                </div>
-              </NoticeLi>
-              <NoticeLi>
-                <div
-                  onClick={() => handler("award")}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  수상내역
-                </div>
-              </NoticeLi>
-              <NoticeLi>
-                <div
-                  onClick={() => handler("patent")}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  특허사항
-                </div>
-              </NoticeLi>
-            </NoticeNavStyle>
-          </section>
-          <section className={styles.noticesection3}>
-            <NoticeTable>
-              <div className={styles.tabletop}>
-                <div>제목</div>
-                <div>작성일</div>
-              </div>
-              {currentPosts(posts).length === 0 ? (
-                <NoPost />
-              ) : (
-                currentPosts(posts).map((post) => {
-                  return (
-                    <NoticeItem
-                      key={post.seq}
-                      id={post.seq}
-                      title={post.title}
-                      date={post.created_at.slice(0, 10)}
-                      category={post.category}
-                    ></NoticeItem>
-                  );
-                })
-              )}
-            </NoticeTable>
-            <div className={styles.noticepagebar}>
-              <button className={cx("prevpage")} onClick={prevPage}>
-                <span
-                  className={cx("prevpageArrow", {
-                    buttonDisable: isPrevButtonDisabled,
-                  })}
-                ></span>
-              </button>
-              <NoticePage>
-                {currentPage}/{totalPage === 0 ? 1 : totalPage}
-              </NoticePage>
-              <button className={cx("nextpage")} onClick={nextPage}>
-                <span
-                  className={cx("nextpageArrow", {
-                    buttonDisable: isNextButtonDisabled,
-                  })}
-                ></span>
-              </button>
-            </div>
-          </section>
         </MainContainer>
-        <TheFooter />
-      </main>
-    </div>
+      </div>
+      <MainContainer>
+        <section className={styles.noticesection2}>
+          <NoticeNavStyle>
+            <NoticeLi>
+              <div
+                onClick={() => handler("news")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                언론 보도 내용
+              </div>
+            </NoticeLi>
+            <NoticeLi>
+              <div
+                onClick={() => handler("job")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                채용정보
+              </div>
+            </NoticeLi>
+            <NoticeLi>
+              <div
+                onClick={() => handler("company")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                회사소식
+              </div>
+            </NoticeLi>
+            <NoticeLi>
+              <div
+                onClick={() => handler("award")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                수상내역
+              </div>
+            </NoticeLi>
+            <NoticeLi>
+              <div
+                onClick={() => handler("patent")}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                특허사항
+              </div>
+            </NoticeLi>
+          </NoticeNavStyle>
+        </section>
+        <section className={styles.noticesection3}>
+          <NoticeTable>
+            <div className={styles.tabletop}>
+              <div>제목</div>
+              <div>작성일</div>
+            </div>
+            {currentPosts(posts).length === 0 ? (
+              <NoPost />
+            ) : (
+              currentPosts(posts).map((post) => {
+                return (
+                  <NoticeItem
+                    key={post.seq}
+                    id={post.seq}
+                    title={post.title}
+                    date={post.created_at.slice(0, 10)}
+                    category={post.category}
+                  ></NoticeItem>
+                );
+              })
+            )}
+          </NoticeTable>
+          <div className={styles.noticepagebar}>
+            <button className={cx("prevpage")} onClick={prevPage}>
+              <span
+                className={cx("prevpageArrow", {
+                  buttonDisable: isPrevButtonDisabled,
+                })}
+              ></span>
+            </button>
+            <NoticePage>
+              {currentPage}/{totalPage === 0 ? 1 : totalPage}
+            </NoticePage>
+            <button className={cx("nextpage")} onClick={nextPage}>
+              <span
+                className={cx("nextpageArrow", {
+                  buttonDisable: isNextButtonDisabled,
+                })}
+              ></span>
+            </button>
+          </div>
+        </section>
+      </MainContainer>
+      <TheFooter />
+    </main>
   );
 }
 export default PostMainPage;
