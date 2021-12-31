@@ -23,6 +23,8 @@ function PostMainPage() {
   const [isPrevButtonDisabled, setIsPrevButtonDisabled] = useState(true);
   const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
 
+  const [currentClick, setCurrentClick] = useState(null);
+  const [prevClick, setPrevClick] = useState(null);
   const cx = classNames.bind(styles);
 
   const indexOfLast = currentPage * postsPerPage;
@@ -67,6 +69,7 @@ function PostMainPage() {
         setCategory(value);
         setCurrentPage(1);
         setPosts(response.data.reverse());
+        setCurrentClick(value);
       }
     );
   };
@@ -77,6 +80,23 @@ function PostMainPage() {
     });
   }, []);
 
+  useEffect(
+    (e) => {
+      if (currentClick !== null) {
+        let current = document.getElementById(currentClick);
+        // console.log(current);
+        current.style.fontWeight = "bold";
+      }
+
+      if (prevClick !== null) {
+        let prev = document.getElementById(prevClick);
+        prev.style.fontWeight = "normal";
+      }
+      setPrevClick(currentClick);
+    },
+    [currentClick]
+  );
+
   return (
     <main>
       <TheHeader selectedNavItem={"notice"} />
@@ -84,7 +104,7 @@ function PostMainPage() {
         <MainContainer>
           <section className={styles.noticesection1}>
             <Caption>NOTICE</Caption>
-            <Heading1 className={styles.heading1}>
+            <Heading1>
               새소식을 <br /> 확인하세요
             </Heading1>
           </section>
@@ -95,6 +115,7 @@ function PostMainPage() {
           <NoticeNavStyle>
             <NoticeLi>
               <div
+                id="news"
                 onClick={() => handler("news")}
                 style={{ textDecoration: "none", color: "black" }}
               >
@@ -103,6 +124,7 @@ function PostMainPage() {
             </NoticeLi>
             <NoticeLi>
               <div
+                id="job"
                 onClick={() => handler("job")}
                 style={{ textDecoration: "none", color: "black" }}
               >
@@ -111,6 +133,7 @@ function PostMainPage() {
             </NoticeLi>
             <NoticeLi>
               <div
+                id="company"
                 onClick={() => handler("company")}
                 style={{ textDecoration: "none", color: "black" }}
               >
@@ -119,6 +142,7 @@ function PostMainPage() {
             </NoticeLi>
             <NoticeLi>
               <div
+                id="award"
                 onClick={() => handler("award")}
                 style={{ textDecoration: "none", color: "black" }}
               >
@@ -127,6 +151,7 @@ function PostMainPage() {
             </NoticeLi>
             <NoticeLi>
               <div
+                id="patent"
                 onClick={() => handler("patent")}
                 style={{ textDecoration: "none", color: "black" }}
               >

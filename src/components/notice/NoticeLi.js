@@ -7,7 +7,8 @@ const StyledNoticeLi = styled.li`
   padding: 0 3.2rem;
   float:left;
   color: ${(props) => props.color || palette.gray[5]};
-  font-size: 1.6rem;
+  font-size: 16px;
+  line-height: 26px;
   border-right: 0.1rem solid ${(props) => props.color || palette.gray[2]};
   list-style:none;
   white-space: nowrap;

@@ -29,16 +29,14 @@
 }
 
 .noticesection1 {
-  padding: 20rem 0;
+  padding: 20rem 0 4rem;
   display: flex;
   flex-direction: column;
-  padding-bottom: 4rem;
   margin-left: 1rem;
 }
 
 .noticesection2 {
   margin-top: 5rem;
-  padding-top: 0rem;
 }
 
 .noticesection3 {
@@ -50,7 +48,7 @@
   min-height: 40rem;
 }
 
-.nextpage, 
+.nextpage,
 .prevpage {
   position: relative;
   border: none;
@@ -63,30 +61,30 @@
 
 .prevpageArrow {
   position: absolute;
-  width: 80%; 
-  height: 80%; 
-  border-top: .1rem solid #26282B; 
-  border-right: .1rem solid #26282B; 
+  width: 80%;
+  height: 80%;
+  border-top: 0.1rem solid #26282b;
+  border-right: 0.1rem solid #26282b;
   display: block;
-  transform: rotate(225deg); 
-  top: -.05rem;
+  transform: rotate(225deg);
+  top: -0.05rem;
 }
 
 .nextpageArrow {
   position: absolute;
-  width: 80%; 
-  height: 80%; 
-  border-top: .1rem solid #26282B; 
-  border-right: .1rem solid #26282B; 
+  width: 80%;
+  height: 80%;
+  border-top: 0.1rem solid #26282b;
+  border-right: 0.1rem solid #26282b;
   display: block;
-  transform: rotate(45deg); 
-  top: -.05rem;
-  left: -.7rem;
+  transform: rotate(45deg);
+  top: -0.05rem;
+  left: -0.7rem;
 }
 
 .buttonDisable {
-  border-top: .1rem solid #E9EBED; 
-  border-right: .1rem solid #E9EBED; 
+  border-top: 0.1rem solid #e9ebed;
+  border-right: 0.1rem solid #e9ebed;
   cursor: auto;
 }
 
@@ -115,4 +113,3 @@
     padding: 2.6rem 0 10rem;
   }
 }
-
