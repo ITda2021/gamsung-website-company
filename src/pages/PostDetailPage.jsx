@@ -9,31 +9,36 @@ import NoticeDetailTable from "components/notice/NoticeDetailTable";
 import NoticeDetailContent from "components/notice/NoticeDetailContent";
 import NoticeDetailButton from "components/notice/NoticeDetailButton";
 import TheFooter from "components/TheFooter";
-import Axios from "axios";
-import { Link } from "react-router-dom";
-import Button from "components/common/button";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 //공지사항 세부페이지
 function PostDetailPage() {
+  const navigate = useNavigate();
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
-  const params = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const response = await Axios.get(
-        `http://3.130.190.15:8080/api/posts/${params.id}`
+      const response = await axios.get(
+        `http://3.130.190.15:8080/api/posts/${id}`
       );
       setPost(response.data);
       setLoading(false);
     }
     fetchData();
-  }, []);
+  }, [id]);
+
+  const editPost = () => {
+    navigate(`/notice/edit/${id}`);
+  };
 
   const deletePost = () => {
-    console.log("눌림");
-    Axios.delete(`http://3.130.190.15:8080/api/posts/${post.seq}`);
+    axios.delete(`http://3.130.190.15:8080/api/posts/${post.seq}`).then(() => {
+      navigate(`/notice`);
+    });
   };
 
   if (loading) {
@@ -58,24 +63,24 @@ function PostDetailPage() {
                   {post.created_at.slice(0, 10)}
                 </NoticeDetailDate>
                 <NoticeDetailTitle>{post.title}</NoticeDetailTitle>
+                <div className={styles.actionBtnsContainer}>
+                  <button className={styles.editBtn} onClick={editPost}>
+                    편집
+                  </button>
+                  <div></div>
+                  <button className={styles.deleteBtn} onClick={deletePost}>
+                    삭제
+                  </button>
+                </div>
               </div>
               <NoticeDetailContent
                 dangerouslySetInnerHTML={{ __html: post.content }}
               ></NoticeDetailContent>
             </NoticeDetailTable>
             <div className={styles.postdetailbtn}>
-              <Link to={"/notice"}>
-                <NoticeDetailButton>목록으로 돌아가기</NoticeDetailButton>
-              </Link>
-              <Link
-                to={{
-                  pathname: "/notice",
-                }}
-              >
-                <button className={styles.delete} onClick={deletePost}>
-                  삭제하기
-                </button>
-              </Link>
+              <NoticeDetailButton onClick={() => navigate(`/notice`)}>
+                목록으로 돌아가기
+              </NoticeDetailButton>
             </div>
           </section>
         </MainContainer>

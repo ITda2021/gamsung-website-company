@@ -1,7 +1,18 @@
 .tabletop {
   border-bottom: 1px solid #e9ebed;
   font-weight: bold;
+  padding: 1.7rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.tabletop div {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 160%;
+}
+
 .background {
   background: url("img/site_background.jpg") no-repeat;
   height: 40rem;
@@ -9,11 +20,7 @@
   background-size: cover;
   margin-top: 9rem;
 }
-/*
-.noticeheader {
-  margin-top: 2.5rem;
-}
-*/
+
 .noticepagebar {
   margin-top: 5.9rem;
   display: flex;
@@ -84,6 +91,9 @@
 }
 
 @media (max-width: 960px) {
+  .tabletop div:last-child {
+    display: none;
+  }
   .noticesection1 {
     display: flex;
     padding-top: 10rem;
@@ -105,3 +115,4 @@
     padding: 2.6rem 0 10rem;
   }
 }
+

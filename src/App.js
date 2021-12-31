@@ -21,6 +21,7 @@ function App() {
             <Route path="/notice" element={<PostMainPage />} />
             <Route path="/notice/:id" element={<PostDetailPage />} />
             <Route path="/notice/edit" element={<PostEditPage />} />
+            <Route path="/notice/edit/:id" element={<PostEditPage />} />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>

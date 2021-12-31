@@ -8,17 +8,30 @@
   margin: auto;
   display: block;
 }
-.delete {
-  margin: auto;
-  border: 1.5px solid #000000;
+
+.actionBtnsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.actionBtnsContainer > div:nth-child(2) {
+  width: .15rem;
+  height: 1.5rem;
+  background-color: #E9EBED;
+  margin: 0 1rem;
+}
+
+.editBtn, 
+.deleteBtn {
+  border: none;
+  background-color: transparent;
   cursor: pointer;
   font-family: Noto Sans KR;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.6rem;
-  padding: 1.2rem 3rem;
-  border-radius: 4rem;
-  display: block;
+  font-size: 1.4rem;
+  padding: 0;
+  color: #9FA4A9;
 }
 
 .loadingContainer {

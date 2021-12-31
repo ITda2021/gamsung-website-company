@@ -9,8 +9,6 @@ import NoticeNavStyle from "components/notice/NoticeNavStyle";
 import NoticeLi from "components/notice/NoticeLi";
 import styles from "./PostMainPage.module.css";
 import NoticeTable from "components/notice/NoticeTable";
-import NoticeTitle from "components/notice/NoticeTitle";
-import NoticeDate from "components/notice/NoticeDate";
 import NoticePage from "components/notice/NoticePageCount";
 import TheFooter from "components/TheFooter";
 import NoticeItem from "components/notice/NoticeItem";
@@ -137,8 +135,8 @@ function PostMainPage() {
           <section className={styles.noticesection3}>
             <NoticeTable>
               <div className={styles.tabletop}>
-                <NoticeTitle>제목</NoticeTitle>
-                <NoticeDate>작성일</NoticeDate>
+                <div>제목</div>
+                <div>작성일</div>
               </div>
               {currentPosts(posts).length === 0 ? (
                 <NoPost />

@@ -35,7 +35,7 @@ function MainPage() {
       <TheHeader />
       <MainContainer>
         <section className={styles.intro}>
-          <Title>감성소프트 소개문구</Title>
+          <Title>자막, 누구나 쉽고 빠르게 '모딧'하자 </Title>
         </section>
         <section className={styles.shortwhole}>
           <section className={styles.aboutshort}>

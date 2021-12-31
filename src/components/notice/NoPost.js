@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import palette from "lib/style/palette";
 
 function NoPost() {
   return <StyledNoPost>게시글이 없습니다.</StyledNoPost>;

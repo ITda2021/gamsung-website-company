@@ -1,14 +1,14 @@
-import React from "react";
-import styles from "./PostEditPage.module.css";
-import { EditorState, convertToRaw } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import draftToHtml from "draftjs-to-html";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import styles from "./PostEditPage.module.css";
+import Editor from "components/notice/EditorComponent";
+import MainContainer from "components/common/MainContainer.js";
 
 function PostEditPage() {
+  const navigate = useNavigate();
+  const { id } = useParams();
+
   const OPTIONS = [
     { value: "news", name: "언론 보도 내용" },
     { value: "job", name: "채용정보" },
@@ -16,94 +16,126 @@ function PostEditPage() {
     { value: "award", name: "수상내역" },
     { value: "patent", name: "특허사항" },
   ];
-  const [PostContent, setPostContent] = useState({
-    category: "news",
+
+  const [post, setPost] = useState({
     title: "",
+    category: OPTIONS[0].value,
     content: "",
   });
 
-  const submitPost = () => {
-    axios
-      .post("http://3.130.190.15:8080/api/posts", {
-        category: PostContent.category,
-        title: PostContent.title,
-        content: draftToHtml(convertToRaw(editorState.getCurrentContent())),
-      })
-      .then(() => {
-        alert("저장됨");
-      });
-  };
-
-  const getValue = (e) => {
-    const { name, value } = e.target;
-    setPostContent({
-      ...PostContent,
+  const onChange = (e) => {
+    console.log("제목이나 카테고리 바뀜");
+    const { value, name } = e.target;
+    setPost({
+      ...post,
       [name]: value,
     });
-    console.log(PostContent);
+    console.log(post);
   };
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setPostContent({
-      ...PostContent,
-      category: value,
-    });
-    console.log(PostContent);
+  const onChangeContent = (value) => {
+    console.log("콘텐츠 바뀜");
+    setPost(
+      {
+        ...post,
+        content: value,
+      },
+      console.log(post)
+    );
   };
 
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-
-  const onEditorStateChange = (editorState) => {
-    setEditorState(editorState);
+  const handleCancel = () => {
+    navigate(-1);
   };
+
+  const handleSubmit = () => {
+    if (post.title.trim() === "" || post.content.trim() === "") {
+      alert("내용을 입력해주세요.");
+      return;
+    }
+    if (id) {
+      axios.put(`http://localhost:8080/api/posts/${id}`, post).then(() => {
+        alert("글이 수정되었습니다.");
+        navigate("/notice");
+      });
+    } else {
+      axios
+        .post("http://3.130.190.15:8080/api/posts", {
+          title: post.title,
+          category: post.category,
+          content: post.content,
+        })
+        .then(() => {
+          alert("글이 저장되었습니다.");
+          navigate("/notice");
+        });
+    }
+  };
+
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+    const fetchData = async () => {
+      const response = await axios.get(`http://localhost:8080/api/posts/${id}`);
+      setPost(response.data);
+      console.log("=============");
+      console.log(response.data);
+      console.log("=============");
+      console.log(post);
+    };
+    fetchData();
+  }, [id]);
 
   return (
-    <div className={styles.Postboard}>
-      <h1 className={styles.title}>게시글 작성</h1>
-      <div className={styles.Postcontainer}>
-        <div className={styles.formwrapper}>
-          <div className={styles.head}>
-            <input
-              className={styles.titleinput}
-              type="text"
-              placeholder="제목"
-              onChange={getValue}
-              name="title"
-            />
-            <select
-              className={styles.dropbox}
-              onChange={handleChange}
-              value={PostContent.category}
-            >
-              {OPTIONS.map((item) => (
-                <option value={item.value} key={item.value}>
-                  {item.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <Editor
-            editorState={editorState}
-            toolbarClassName="toolbarClassName"
-            wrapperClassName="wrapperClassName"
-            editorClassName="editorClassName"
-            onEditorStateChange={onEditorStateChange}
-            placeholder="내용을 작성해주세요."
-            data="글을 입력하세요"
-            localization={{
-              locale: "ko",
-            }}
-            className={styles.editor}
-            editorState={editorState}
-            onEditorStateChange={onEditorStateChange}
-          />
-          <Link to={"/notice"}>
-            <button className={styles.submitbutton} onClick={submitPost}>
-              저장하기
-            </button>
-          </Link>
+    <div>
+      <div className={styles.postBoard}>
+        <div className={styles.postBoardHeader}>
+          <MainContainer className={styles.postBoardContainer}>
+            <h1 className={styles.postBoardTitle}>게시글 작성</h1>
+            <div className={styles.postBoardBtnContainer}>
+              <button className={styles.cancelBtn} onClick={handleCancel}>
+                취소
+              </button>
+              <button className={styles.submitBtn} onClick={handleSubmit}>
+                저장
+              </button>
+            </div>
+          </MainContainer>
         </div>
+        <MainContainer>
+          <div className={styles.postContainer}>
+            <div className={styles.postHeader}>
+              <div className={styles.postTitleContainer}>
+                <label htmlFor="title">제목</label>
+                <input
+                  className={styles.postTitle}
+                  type="text"
+                  placeholder="제목을 입력해 주세요."
+                  onChange={onChange}
+                  name="title"
+                  value={post.title}
+                />
+              </div>
+              <div className={styles.postCategoryContainer}>
+                <label htmlFor="category">카테고리</label>
+                <select
+                  className={styles.postCategory}
+                  onChange={onChange}
+                  value={post.category}
+                  name="category"
+                >
+                  {OPTIONS.map((item) => (
+                    <option value={item.value} key={item.value}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <Editor value={post.content} onChange={onChangeContent} />
+          </div>
+        </MainContainer>
       </div>
     </div>
   );
