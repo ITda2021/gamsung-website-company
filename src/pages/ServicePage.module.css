@@ -56,6 +56,7 @@
 .playstore:hover {
   opacity: 70%;
 }
+/*
 .appstore {
   background: url("img/appstore.png") no-repeat;
   border: none;
@@ -68,7 +69,7 @@
 .appstore:hover {
   opacity: 70%;
 }
-
+*/
 @media (max-width: 960px) {
   .service {
     display: flex;

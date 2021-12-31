@@ -1,3 +1,8 @@
+.subtitle {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
 .home {
   background-image: url("img/mainpage.png");
   background-repeat: no-repeat;
@@ -131,15 +136,17 @@
 }
 
 @media (max-width: 960px) {
+  .subtitle {
+    font-size: 1.4rem;
+  }
   .homeImg {
     height: 100vh;
   }
   .intro {
     padding-top: 23rem;
-    margin-right: 30%;
+    margin-right: 15.6rem;
     white-space: pre-line;
-    word-wrap: break-word;
-    width: 78.13%;
+    word-wrap: keep-all;
   }
   /*.intro의 width는 문구 확정되면 수정*/
   .arrow {

@@ -56,12 +56,6 @@ function ServicePage() {
                   window.open("https://play.google.com/store/apps", "_blank")
                 }
               />
-              <button
-                className={styles.appstore}
-                onClick={() =>
-                  window.open("https://www.apple.com/kr/app-store/", "_blank")
-                }
-              />
             </div>
           </div>
           <img className={styles.modit} src={Modit} alt="모딧 이미지" />
